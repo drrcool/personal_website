@@ -17,6 +17,7 @@ const ThemeContextProvider = ({ children }: { children: React.ReactNode }) => {
         colors: getColorTheme(theme),
         fontFamily,
         setTheme,
+        theme
 
     }), [theme, setTheme, fontFamily])
 

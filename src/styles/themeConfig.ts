@@ -43,7 +43,7 @@ const colorTable = (theme: BaseThemeConfig): ThemeConfig => ({
     activeNavLink: theme.accent3,
     navLink: theme.textPrimary,
     hoverNavLink: theme.accent2,
-    headerUtilityButtonPrimary: theme.accent3,
+    headerUtilityButtonPrimary: theme.accent1,
     headerUtilityButtonSecondary: theme.accent2,
 });
 

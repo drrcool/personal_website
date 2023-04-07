@@ -29,13 +29,14 @@ font-family: ${(props) => props.theme.fontFamily};
     font-family: inherit;
     box-sizing: inherit;
     margin:0;
-    padding:0
+    padding:0;
+    text-decoration: none;
   }
 
-  a:active,
-  a:hover,
-  a:focus,
-  a:visited {
+  *:active,
+  *:hover,
+  *:focus,
+  *:visited {
     outline: 0 !important;
     outline-offset:0;
     text-decoration: none;
