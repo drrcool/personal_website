@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Enable static exports for better Netlify compatibility
-  output: 'export',
+  output: "export",
 
   // Disable image optimization for static export
   images: {
-    unoptimized: true
+    unoptimized: true,
   },
 
   // Base path if deploying to subdirectory
@@ -16,8 +16,8 @@ const nextConfig = {
 
   // Environment variables
   env: {
-    SITE_URL: process.env.SITE_URL || 'https://drrcool.netlify.app',
-  }
-}
+    SITE_URL: process.env.SITE_URL || "https://drrcool.netlify.app",
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
