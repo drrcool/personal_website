@@ -31,10 +31,18 @@ A professional website serving as both a source-of-truth for business legitimacy
 - Professional Netlify hosting integration
 - TypeScript for code quality demonstration
 
-### Styling: Tailwind CSS + Framer Motion
+### UI Components: shadcn/ui + Tailwind CSS
+- Copy-paste component approach (no vendor lock-in)
+- Built on Radix UI + Tailwind CSS for accessibility and customization
+- Elegant defaults that match the minimalist design aesthetic
+- TypeScript-first with excellent developer experience
+- Only includes components actually used (minimal bundle size)
+
+### Styling & Animation: Tailwind CSS + Framer Motion
 - Rapid, responsive design development
 - Smooth animations and micro-interactions
-- Professional aesthetic without heavy frameworks
+- Professional aesthetic with full design control
+- Custom CSS variables for dark theme implementation
 
 ### Data Visualization: D3.js + React
 - Showcase data visualization skills directly in the site
@@ -51,6 +59,175 @@ A professional website serving as both a source-of-truth for business legitimacy
 - **Custom Domain**: yourname.com for credibility
 - **Analytics**: Netlify Analytics for visitor insights and engagement tracking
 - **CI/CD**: Automatic deployments from Git repository
+
+## **File Structure & Organization**
+
+```
+personal_website/
+├── README.md
+├── next.config.js
+├── tailwind.config.js
+├── tsconfig.json
+├── package.json
+├── .env.local
+├── .gitignore
+│
+├── public/
+│   ├── images/
+│   │   ├── banner/
+│   │   │   └── astronomy-banner.jpg
+│   │   ├── profile/
+│   │   │   └── professional-headshot.jpg
+│   │   ├── companies/
+│   │   │   ├── netflix-logo.svg
+│   │   │   ├── mmt-observatory-logo.svg
+│   │   │   ├── carnegie-logo.svg
+│   │   │   └── princeton-logo.svg
+│   │   └── tech-icons/
+│   │       ├── python.svg
+│   │       ├── react.svg
+│   │       ├── spark.svg
+│   │       └── [...other-tech-icons].svg
+│   ├── resume.pdf
+│   ├── favicon.ico
+│   ├── robots.txt
+│   └── sitemap.xml
+│
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   ├── globals.css
+│   │   ├── publications/
+│   │   │   └── page.tsx
+│   │   └── not-found.tsx
+│   │
+│   ├── components/
+│   │   ├── ui/                    # shadcn/ui components
+│   │   │   ├── button.tsx
+│   │   │   ├── card.tsx
+│   │   │   ├── tooltip.tsx
+│   │   │   ├── badge.tsx
+│   │   │   └── dialog.tsx
+│   │   │
+│   │   ├── layout/
+│   │   │   ├── banner.tsx
+│   │   │   ├── sidebar.tsx
+│   │   │   ├── navigation.tsx
+│   │   │   └── main-layout.tsx
+│   │   │
+│   │   ├── sections/
+│   │   │   ├── about-section.tsx
+│   │   │   ├── experience-section.tsx
+│   │   │   ├── projects-section.tsx
+│   │   │   ├── side-projects-section.tsx
+│   │   │   ├── community-impact-section.tsx
+│   │   │   └── resume-publications-section.tsx
+│   │   │
+│   │   ├── shared/
+│   │   │   ├── tech-icon.tsx
+│   │   │   ├── project-card.tsx
+│   │   │   ├── experience-item.tsx
+│   │   │   ├── company-logo.tsx
+│   │   │   └── section-title.tsx
+│   │   │
+│   │   └── providers/
+│   │       └── theme-provider.tsx
+│   │
+│   ├── data/
+│   │   ├── personal.md              # Name, tagline, contact info
+│   │   ├── about.md                 # About section content
+│   │   ├── experience.md            # Work experience entries
+│   │   ├── projects.md              # Featured projects
+│   │   ├── side-projects.md         # Personal side projects
+│   │   ├── community-impact.md      # Volunteer work (anonymized)
+│   │   ├── publications.md          # Academic publications
+│   │   ├── tech-stack.md            # Technology stack with tooltips
+│   │   └── skills.md                # Skills and expertise
+│   │
+│   ├── lib/
+│   │   ├── utils.ts                 # Utility functions (cn, etc.)
+│   │   ├── data-parser.ts           # Parse markdown data files
+│   │   ├── validation.ts            # Data validation schemas (Zod)
+│   │   └── constants.ts             # App constants and config
+│   │
+│   ├── types/
+│   │   ├── index.ts                 # Main type definitions
+│   │   ├── experience.ts            # Experience-related types
+│   │   ├── projects.ts              # Project-related types
+│   │   └── content.ts               # Content structure types
+│   │
+│   └── styles/
+│       ├── globals.css              # Global styles and CSS variables
+│       └── components.css           # Component-specific styles
+│
+├── content/                         # Alternative: MDX files for rich content
+│   └── projects/
+│       ├── device-quality-prediction.mdx
+│       ├── partner-launch-monitoring.mdx
+│       └── observatory-optimization.mdx
+│
+└── docs/
+    ├── setup.md
+    ├── content-management.md
+    └── deployment.md
+```
+
+## **Data File Structure & Content Management**
+
+### **Markdown Data Files (`src/data/`)**
+
+Each `.md` file contains structured frontmatter and optional content. For detailed YAML examples and data structures, see `data-examples.md`.
+
+### **Publication Page Component Structure**
+
+The publications page (`src/app/publications/page.tsx`) will include:
+
+#### **Publication List Features:**
+- **Chronological sorting** (newest first)
+- **Filter by publication type** (journal articles, conference papers, etc.)
+- **Search functionality** (title, authors, keywords)
+- **Citation export** (BibTeX, APA, etc.)
+- **External link integration** (DOI, arXiv, ADS)
+
+#### **Publication Card Component:**
+```typescript
+// Example component structure
+interface Publication {
+  id: string;
+  title: string;
+  authors: string[];
+  date: string;
+  publication: string;
+  volume?: string;
+  issue?: string;
+  pages?: string;
+  doi?: string;
+  arxiv?: string;
+  adsabs?: string;
+  url?: string;
+  abstract?: string;
+  featured?: boolean;
+}
+
+// Component renders:
+// - Formatted citation
+// - Author list (highlighting your name)
+// - Publication venue and date
+// - External links (DOI, arXiv, etc.)
+// - Expandable abstract
+// - Copy citation button
+```
+
+### **Content Management Strategy**
+
+1. **Static Data**: Stored in markdown files with YAML frontmatter
+2. **Rich Content**: Use MDX files in `/content/` for detailed project descriptions only
+3. **Publications**: Single list in `publications.md` with structured metadata
+4. **Assets**: Organized by type in `/public/images/`
+5. **Type Safety**: Zod schemas in `/src/lib/validation.ts` validate data structure
+6. **Parsing**: Custom parser in `/src/lib/data-parser.ts` handles markdown files
+7. **Updates**: Simple markdown editing for content changes, no database required
 
 ## Site Architecture
 
