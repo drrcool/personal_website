@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function Home() {
+export default function Home(): React.ReactElement {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
       <div className="container mx-auto px-6 py-16 lg:px-8">

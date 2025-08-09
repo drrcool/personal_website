@@ -71,6 +71,7 @@ const config: Config = {
         md: "var(--radius-md)",
         sm: "var(--radius-sm)",
         xl: "var(--radius-xl)",
+        DEFAULT: "var(--radius-lg)", // Base radius
       },
       boxShadow: {
         "2xs": "var(--shadow-2xs)",

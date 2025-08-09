@@ -3,6 +3,7 @@
 This file contains all the example YAML frontmatter and markdown structures for the personal website data files.
 
 ## **`src/data/personal.md`**
+
 ```yaml
 ---
 name: "Your Full Name"
@@ -20,6 +21,7 @@ resume: "/resume.pdf"
 ```
 
 ## **`src/data/about.md`**
+
 ```yaml
 ---
 lead: "Astronomer turned data solutions architect."
@@ -36,6 +38,7 @@ highlights:
 ```
 
 ## **`src/data/experience.md`**
+
 ```yaml
 ---
 positions:
@@ -70,7 +73,8 @@ positions:
       - "Published 3 first-author papers in top-tier astronomy journals"
       - "Built automated data quality pipeline reducing manual review by 85%"
       - "Led international collaboration analyzing 50,000+ galaxy spectra"
-    technologies: ["Python", "SQL", "Data Pipelines", "Statistical Analysis", "HPC"]
+    technologies:
+      ["Python", "SQL", "Data Pipelines", "Statistical Analysis", "HPC"]
 
   - id: "mmt-observatory-engineer"
     title: "Systems Engineer & Observer"
@@ -86,11 +90,13 @@ positions:
       - "Implemented queue scheduling system improving throughput by 20%"
       - "Led night operations for $50M research facility"
       - "Developed performance monitoring and predictive maintenance systems"
-    technologies: ["Python", "Control Systems", "Optimization", "Performance Monitoring"]
+    technologies:
+      ["Python", "Control Systems", "Optimization", "Performance Monitoring"]
 ---
 ```
 
 ## **`src/data/tech-stack.md`**
+
 ```yaml
 ---
 categories:
@@ -148,6 +154,7 @@ categories:
 ```
 
 ## **`src/data/projects.md`**
+
 ```yaml
 ---
 featuredProjects:
@@ -157,7 +164,8 @@ featuredProjects:
     type: "ML Platform"
     impact: "15% improvement in customer experience"
     description: "Real-time ML pipeline analyzing device performance signals to predict and prevent streaming quality issues before they impact customers."
-    technologies: ["PySpark", "ML Pipeline", "Real-time Processing", "Feature Engineering"]
+    technologies:
+      ["PySpark", "ML Pipeline", "Real-time Processing", "Feature Engineering"]
     featured: true
 
   - id: "partner-launch-monitoring"
@@ -166,7 +174,8 @@ featuredProjects:
     type: "Analytics Platform"
     impact: "$50M+ strategic decision support"
     description: "Comprehensive analytics platform tracking partner performance metrics across markets, enabling data-driven expansion strategies."
-    technologies: ["Spark", "Trino", "Dashboard Development", "Statistical Analysis"]
+    technologies:
+      ["Spark", "Trino", "Dashboard Development", "Statistical Analysis"]
     featured: true
 
   - id: "observatory-queue-optimization"
@@ -181,6 +190,7 @@ featuredProjects:
 ```
 
 ## **`src/data/publications.md`**
+
 ```yaml
 ---
 publications:
@@ -223,11 +233,12 @@ publications:
     doi: "10.1088/1538-3873/ac0123"
     url: "https://iopscience.iop.org/article/10.1088/1538-3873/ac0123"
     abstract: "We present a machine learning framework for automated quality assessment of astronomical imaging data, reducing manual review time by 85%..."
-    featured: true  # Highlight data engineering work
+    featured: true # Highlight data engineering work
 ---
 ```
 
 ## **`src/data/side-projects.md`**
+
 ```yaml
 ---
 sideProjects:
@@ -237,8 +248,8 @@ sideProjects:
     type: "Personal app"
     description: "Lightweight habits and reminders coach with an uncluttered interface and offline‑first sync."
     technologies: ["React Native", "Expo", "TypeScript"]
-    github: "https://github.com/yourname/habits-coach"  # optional
-    demo: ""  # optional
+    github: "https://github.com/yourname/habits-coach" # optional
+    demo: "" # optional
     featured: true
 
   - id: "meal-planner"
@@ -264,6 +275,7 @@ sideProjects:
 ```
 
 ## **`src/data/community-impact.md`**
+
 ```yaml
 ---
 communityProjects:
@@ -286,6 +298,7 @@ communityProjects:
 ```
 
 ## **`src/data/skills.md`**
+
 ```yaml
 ---
 skillCategories:
