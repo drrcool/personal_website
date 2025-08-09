@@ -32,16 +32,13 @@ const eslintConfig = [
       // TypeScript strict rules - NO ANY ALLOWED
       "@typescript-eslint/no-explicit-any": "error",
 
-      // Additional TypeScript quality rules
-      "@typescript-eslint/prefer-nullish-coalescing": "error",
-      "@typescript-eslint/prefer-optional-chain": "error",
+      // Additional TypeScript quality rules (without type checking)
       "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
       "@typescript-eslint/explicit-function-return-type": "warn",
       "@typescript-eslint/no-inferrable-types": "error",
       "@typescript-eslint/no-var-requires": "error",
       "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
       "@typescript-eslint/consistent-type-imports": "error",
-      "@typescript-eslint/no-unnecessary-type-assertion": "error",
       "@typescript-eslint/prefer-as-const": "error",
       "@typescript-eslint/array-type": ["error", { "default": "array-simple" }],
 
