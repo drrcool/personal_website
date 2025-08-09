@@ -4,7 +4,7 @@ import "../styles/globals.css";
 export const metadata: Metadata = {
   title: "Personal Website | Professional Portfolio",
   description:
-    "Personal portfolio website built with Next.js, TypeScript, and Poppins typography. Showcasing professional experience and projects.",
+    "Personal portfolio website built with Next.js, TypeScript, and modern design system. Showcasing professional experience and projects.",
 };
 
 export default function RootLayout({
@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`antialiased bg-background text-foreground`}>
+      <body className="font-sans antialiased bg-background text-foreground">
         {children}
       </body>
     </html>
