@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Solutions Architect — Portfolio</title>
+    <style>
+      :root {
+        --bg: #0b0f14;
+        --text: #e5e7eb;
+        --muted: #94a3b8;
+        --border: #1f2937;
+        --accent: #14b8a6;
+        --link: #7dd3fc;
+        --card: #0f172a;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      a {
+        color: var(--link);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+
+      /* Banner */
+      .banner {
+        width: 100%;
+        height: 280px;
+        background-image: url("https://via.placeholder.com/1600x400.png?text=Astronomy+Banner");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        margin-bottom: 24px;
+      }
+      .banner::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.25),
+          rgba(0, 0, 0, 0.6)
+        );
+      }
+
+      .wrapper {
+        max-width: 1200px;
+        margin: 0;
+        padding: 40px 24px;
+      }
+
+      .layout {
+        display: grid;
+        grid-template-columns: 320px 1fr;
+        gap: 48px;
+      }
+
+      /* Sidebar */
+      aside {
+        position: sticky;
+        top: 24px;
+        height: calc(100vh - 48px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-right: 1px solid var(--border);
+        padding: 0 24px;
+      }
+
+      .identity {
+      }
+
+      .avatar {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        height: auto;
+        border-radius: 50%;
+        object-fit: cover;
+        background: #0b1220;
+        border: 2px solid var(--border);
+        display: block;
+        margin-bottom: 24px;
+      }
+
+      .name {
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        margin-bottom: 8px;
+      }
+
+      .role {
+        color: var(--muted);
+        font-size: 16px;
+        margin-bottom: 16px;
+      }
+
+      .role + .role {
+        margin-top: -14px;
+      }
+
+      .tagline {
+        font-size: 15px;
+        color: var(--muted);
+        margin-bottom: 24px;
+      }
+
+      nav ul {
+        list-style: none;
+      }
+      nav li {
+        margin: 10px 0;
+      }
+      nav a {
+        color: var(--text);
+        font-weight: 500;
+      }
+      nav a:hover {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      .social {
+        display: flex;
+        gap: 14px;
+        margin-top: 16px;
+      }
+
+      .social a {
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .social a:hover {
+        color: var(--accent);
+      }
+
+      /* Main content */
+      main {
+        padding-bottom: 80px;
+      }
+
+      section {
+        padding: 24px 0 56px;
+        border-bottom: 1px solid var(--border);
+      }
+      section:last-child {
+        border-bottom: none;
+      }
+
+      .section-title {
+        font-size: 16px;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        margin-bottom: 18px;
+      }
+
+      .lead {
+        font-size: 18px;
+        color: var(--text);
+        margin-bottom: 16px;
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      /* Tech stack */
+      .tech-stack-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 24px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border);
+        justify-content: center;
+      }
+
+      .tech-icon {
+        width: 40px;
+        height: 40px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        transition: all 0.2s ease;
+        position: relative;
+        cursor: pointer;
+      }
+
+      .tech-icon:hover {
+        background: var(--border);
+        transform: translateY(-2px);
+      }
+
+      .tech-icon::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        bottom: -35px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--text);
+        color: var(--bg);
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 12px;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease;
+        z-index: 10;
+      }
+
+      .tech-icon:hover::after {
+        opacity: 1;
+      }
+
+      /* Lists */
+      .list {
+        display: grid;
+        gap: 18px;
+      }
+
+      .exp-item {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+      }
+      .exp-logo {
+        width: 48px;
+        height: 48px;
+        border-radius: 8px;
+        object-fit: cover;
+        background: var(--card);
+        border: 1px solid var(--border);
+        flex-shrink: 0;
+      }
+      .exp-logos {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        flex-shrink: 0;
+      }
+      .exp-logos .exp-logo {
+        width: 48px;
+        height: 48px;
+      }
+      .exp-content {
+        flex: 1;
+      }
+      .exp-role {
+        font-weight: 600;
+      }
+      .exp-meta {
+        color: var(--muted);
+        font-size: 14px;
+        margin-bottom: 8px;
+      }
+      .exp-desc {
+        color: var(--text);
+      }
+      .exp-item ul {
+        margin: 8px 0 0 18px;
+      }
+      .exp-item li {
+        margin: 6px 0;
+      }
+
+      /* Projects */
+      .projects {
+        display: grid;
+        gap: 18px;
+      }
+      .project {
+        padding: 16px;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        background: var(--card);
+        transition: background 0.2s ease;
+      }
+      .project:hover {
+        background: #111827;
+      }
+      .project-title {
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
+      .project-meta {
+        color: var(--muted);
+        font-size: 14px;
+        margin-bottom: 8px;
+      }
+      .stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 8px;
+      }
+      .tag {
+        font-size: 12px;
+        padding: 4px 8px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        color: var(--muted);
+      }
+
+      /* Contact */
+      .contact-cta {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        display: inline-block;
+        padding: 10px 14px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        text-decoration: none;
+      }
+      .btn-primary {
+        background: var(--accent);
+        color: #031014;
+      }
+      .btn-primary:hover {
+        background: #0ea5a6;
+        text-decoration: none;
+      }
+      .btn-secondary {
+        border: 1px solid var(--border);
+        color: var(--muted);
+      }
+      .btn-secondary:hover {
+        color: var(--text);
+        text-decoration: none;
+      }
+
+      /* Responsive */
+      @media (max-width: 960px) {
+        .layout {
+          grid-template-columns: 1fr;
+        }
+        aside {
+          position: static;
+          height: auto;
+          border-right: none;
+          padding-right: 0;
+        }
+        .banner {
+          height: 200px;
+        }
+        .contact-cta {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+        .btn {
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="banner"></div>
+    <div class="wrapper">
+      <div class="layout">
+        <!-- Sidebar -->
+        <aside>
+          <div class="identity">
+            <img
+              src="https://via.placeholder.com/240x240.png?text=Photo"
+              alt="Professional headshot"
+              class="avatar"
+            />
+            <div class="name">Your Name</div>
+            <div class="role">Data Solutions Architect</div>
+            <div class="role">Netflix</div>
+            <p class="tagline">
+              I build end-to-end analytics and tools that turn complex data into
+              business impact at scale.
+            </p>
+
+            <nav aria-label="Primary">
+              <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#side-projects">Side Projects</a></li>
+                <li><a href="#community">Community Impact</a></li>
+                <li>
+                  <a href="#resume-publications">Resume & Publications</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <div>
+            <div class="social" aria-label="Social links">
+              <a href="#" rel="noopener">GitHub</a>
+              <a href="#" rel="noopener">LinkedIn</a>
+              <a href="mailto:you@example.com">Email</a>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main content -->
+        <main>
+          <!-- About -->
+          <section id="about">
+            <div class="section-title">About</div>
+            <p class="lead">Astronomer turned data solutions architect.</p>
+            <p class="muted">
+              I specialize in the full stack of analytics—from Spark/PySpark
+              data engineering to React-based tools and predictive models.
+              Recently, I've built systems processing 3B+ daily records,
+              real‑time alerting that protects millions of customers, and
+              forecasting models that drive strategic decisions years ahead.
+            </p>
+
+            <div class="tech-stack-row">
+              <div class="tech-icon" data-tooltip="Python">🐍</div>
+              <div class="tech-icon" data-tooltip="Spark">⚡</div>
+              <div class="tech-icon" data-tooltip="Trino">🚀</div>
+              <div class="tech-icon" data-tooltip="React">⚛️</div>
+              <div class="tech-icon" data-tooltip="Node">💚</div>
+              <div class="tech-icon" data-tooltip="PySpark">🔥</div>
+              <div class="tech-icon" data-tooltip="Scikit-learn">🤖</div>
+              <div class="tech-icon" data-tooltip="PostgreSQL">🐘</div>
+              <div class="tech-icon" data-tooltip="Tableau">📊</div>
+              <div class="tech-icon" data-tooltip="D3.js">📈</div>
+              <div class="tech-icon" data-tooltip="Pandas">🐼</div>
+            </div>
+          </section>
+
+          <!-- Experience -->
+          <section id="experience">
+            <div class="section-title">Experience</div>
+            <div class="list">
+              <div class="exp-item">
+                <img
+                  src="https://via.placeholder.com/96x96.png?text=N"
+                  alt="Netflix logo"
+                  class="exp-logo"
+                />
+                <div class="exp-content">
+                  <div class="exp-role">
+                    Senior Data Scientist / Senior Analytics Engineer
+                  </div>
+                  <div class="exp-meta">
+                    Netflix · Device quality, forecasting, real‑time analytics
+                  </div>
+                  <ul>
+                    <li>
+                      Built ML model to pre‑tag device quality alerts; reduced
+                      false positives and saved ~0.5 FTE annually.
+                    </li>
+                    <li>
+                      Designed real‑time monitoring for partner firmware
+                      rollouts; surfaced critical issues early, protecting
+                      millions of customers.
+                    </li>
+                    <li>
+                      Developed forecasting for device ecosystem 2–3 years ahead
+                      to inform planning and investment.
+                    </li>
+                    <li>
+                      Shipped end‑to‑end analytics: Spark/PySpark pipelines with
+                      React tools for high‑dimensional data exploration.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="exp-item">
+                <img
+                  src="https://via.placeholder.com/96x96.png?text=MMT"
+                  alt="MMT Observatory logo"
+                  class="exp-logo"
+                />
+                <div class="exp-content">
+                  <div class="exp-role">Staff Scientist</div>
+                  <div class="exp-meta">
+                    MMT Observatory · Automated pipelines & operational
+                    efficiency
+                  </div>
+                  <ul>
+                    <li>
+                      Automated nightly image processing and quality metrics;
+                      enabled real‑time oversight and reduced manual effort.
+                    </li>
+                    <li>
+                      Implemented clustering‑based performance monitoring;
+                      prevented multiple critical equipment failures.
+                    </li>
+                    <li>
+                      Optimized observing schedule with logistic regression;
+                      ~20% reduction in observation overhead.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="exp-item">
+                <div class="exp-logos">
+                  <img
+                    src="https://via.placeholder.com/96x96.png?text=C"
+                    alt="Carnegie Observatories logo"
+                    class="exp-logo"
+                  />
+                  <img
+                    src="https://via.placeholder.com/96x96.png?text=P"
+                    alt="Princeton logo"
+                    class="exp-logo"
+                  />
+                </div>
+                <div class="exp-content">
+                  <div class="exp-role">Postdoctoral Fellow / Researcher</div>
+                  <div class="exp-meta">
+                    Carnegie Observatories, Princeton · Large‑scale data
+                    analysis
+                  </div>
+                  <ul>
+                    <li>
+                      Analyzed millions of galaxies using statistical and ML
+                      methods; led large‑scale data processing initiatives.
+                    </li>
+                    <li>
+                      Built archives and tooling that accelerated research
+                      access and reproducibility.
+                    </li>
+                    <li>
+                      Produced peer‑reviewed results grounded in rigorous,
+                      scalable analysis.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Projects -->
+          <section id="projects">
+            <div class="section-title">Projects</div>
+            <div class="projects">
+              <div class="project">
+                <div class="project-title">
+                  Device Quality Alert Classification
+                </div>
+                <div class="project-meta">
+                  Netflix · Predictive Model · Business impact: reduced false
+                  positives, ~0.5 FTE saved
+                </div>
+                <p>
+                  ML model to pre‑tag device quality alerts, accelerating triage
+                  and resolution. Delivered as part of a dashboard used by
+                  engineering teams.
+                </p>
+                <div class="stack">
+                  <span class="tag">Python</span>
+                  <span class="tag">Spark</span>
+                  <span class="tag">React</span>
+                  <span class="tag">ML</span>
+                </div>
+              </div>
+
+              <div class="project">
+                <div class="project-title">Partner Launch Monitoring</div>
+                <div class="project-meta">
+                  Netflix · Real‑time Analytics · Business impact: protected
+                  millions of customers
+                </div>
+                <p>
+                  Early detection and alerting framework for partner firmware
+                  rollouts. Identified critical issues in early stages to
+                  mitigate customer impact.
+                </p>
+                <div class="stack">
+                  <span class="tag">Druid</span>
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">Real‑time</span>
+                  <span class="tag">Alerting</span>
+                </div>
+              </div>
+
+              <div class="project">
+                <div class="project-title">Operations Optimization</div>
+                <div class="project-meta">
+                  MMT Observatory · Scheduling/Modeling · Business impact: ~20%
+                  overhead reduction
+                </div>
+                <p>
+                  Queue scheduling system guided by logistic regression and
+                  performance metrics. Increased throughput and improved
+                  operational efficiency.
+                </p>
+                <div class="stack">
+                  <span class="tag">Python</span>
+                  <span class="tag">Stats/Modeling</span>
+                  <span class="tag">Optimization</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Side Projects -->
+          <section id="side-projects">
+            <div class="section-title">Side Projects</div>
+            <div class="projects">
+              <div class="project">
+                <div class="project-title">Habits Coach (Mobile)</div>
+                <div class="project-meta">In development · Personal app</div>
+                <p>
+                  Lightweight habits and reminders coach with an uncluttered
+                  interface and offline‑first sync.
+                </p>
+                <div class="stack">
+                  <span class="tag">React Native</span>
+                  <span class="tag">Expo</span>
+                  <span class="tag">TypeScript</span>
+                </div>
+              </div>
+
+              <div class="project">
+                <div class="project-title">Meal Planner</div>
+                <div class="project-meta">Archived prototype · Web app</div>
+                <p>
+                  Weekly meal planning with auto grocery lists and simple recipe
+                  capture.
+                </p>
+                <div class="stack">
+                  <span class="tag">Next.js</span>
+                  <span class="tag">Prisma</span>
+                  <span class="tag">Postgres</span>
+                </div>
+              </div>
+
+              <div class="project">
+                <div class="project-title">Local Trail Finder</div>
+                <div class="project-meta">In exploration · Web map</div>
+                <p>
+                  Minimal map UI to surface nearby hiking trails with filters
+                  for distance and elevation.
+                </p>
+                <div class="stack">
+                  <span class="tag">Mapbox</span>
+                  <span class="tag">Node API</span>
+                  <span class="tag">TypeScript</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Community Impact -->
+          <section id="community">
+            <div class="section-title">Community Impact</div>
+            <div class="projects">
+              <div class="project">
+                <div class="project-title">Helpline Operations & Reporting</div>
+                <div class="project-meta">
+                  Volunteer · Scheduling & Analytics · Anonymized
+                </div>
+                <p>
+                  Coordinated scheduling and onboarding for a community recovery
+                  helpline. Built monthly engagement reporting and training
+                  materials to improve coverage and service quality.
+                </p>
+                <div class="stack">
+                  <span class="tag">Workflow Design</span>
+                  <span class="tag">Reporting</span>
+                  <span class="tag">Ops</span>
+                </div>
+              </div>
+
+              <div class="project">
+                <div class="project-title">Membership Survey Analytics</div>
+                <div class="project-meta">
+                  Volunteer · Survey ETL & Dashboards · Anonymized
+                </div>
+                <p>
+                  Led survey design and data processing; created dashboards to
+                  analyze year‑over‑year trends and inform program priorities
+                  while preserving participant anonymity.
+                </p>
+                <div class="stack">
+                  <span class="tag">Survey Design</span>
+                  <span class="tag">ETL</span>
+                  <span class="tag">Dashboards</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Resume & Publications -->
+          <section id="resume-publications">
+            <div class="section-title">Resume & Publications</div>
+            <div class="contact-cta">
+              <a
+                class="btn btn-secondary"
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener"
+                >Resume</a
+              >
+              <a class="btn btn-secondary" href="/publications">Publications</a>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

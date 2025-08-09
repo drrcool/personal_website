@@ -1,121 +1,137 @@
 import Image from "next/image";
 
-export default function Home() {
+export default function Home(): React.ReactElement {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 bg-background text-foreground">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start max-w-2xl">
-        <div className="text-center sm:text-left">
-          <h1 className="font-bold text-4xl sm:text-5xl mb-4">
-            Welcome to Your
-            <span className="font-extrabold text-primary">
-              {" "}
-              Personal Website
-            </span>
-          </h1>
-          <p className="lead">
-            Built with Next.js, TypeScript, and beautiful Poppins typography.
-            Ready to showcase your professional journey.
-          </p>
-        </div>
+    <div className="min-h-screen bg-background text-foreground font-sans">
+      <div className="container mx-auto px-6 py-16 lg:px-8">
+        <main className="flex flex-col items-center text-center space-y-12 max-w-4xl mx-auto">
+          {/* Hero Section */}
+          <div className="space-y-6">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
+              Welcome to Your
+              <span className="text-primary block mt-2">Personal Website</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl leading-relaxed">
+              Built with Next.js, TypeScript, and a modern design system. Ready
+              to showcase your professional journey with style.
+            </p>
+          </div>
 
-        <Image
-          className="invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
+          {/* Logo */}
+          <Image
+            className="opacity-80 invert"
+            src="/next.svg"
+            alt="Next.js logo"
+            width={200}
+            height={45}
+            priority
+          />
 
-        <div className="space-y-4">
-          <h3 className="font-semibold">Getting Started</h3>
-          <ol className="font-mono list-inside list-decimal text-sm space-y-3 text-muted-foreground">
-            <li className="tracking-[-.01em]">
-              Get started by editing{" "}
-              <code className="bg-muted text-muted-foreground font-mono font-semibold px-1 py-0.5 rounded">
-                src/app/page.tsx
-              </code>
-              .
-            </li>
-            <li className="tracking-[-.01em]">
-              Save and see your changes instantly.
-            </li>
-          </ol>
-        </div>
+          {/* Getting Started Section */}
+          <div className="bg-card text-card-foreground rounded-lg p-8 w-full max-w-2xl border border-border">
+            <h2 className="text-2xl font-semibold mb-6 text-primary">
+              Getting Started
+            </h2>
+            <div className="space-y-4 text-left">
+              <div className="flex items-start space-x-3">
+                <div className="w-6 h-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-medium mt-1">
+                  1
+                </div>
+                <p className="text-muted-foreground">
+                  Get started by editing{" "}
+                  <code className="bg-muted px-2 py-1 rounded text-sm font-mono text-foreground">
+                    src/app/page.tsx
+                  </code>
+                </p>
+              </div>
+              <div className="flex items-start space-x-3">
+                <div className="w-6 h-6 rounded-full bg-secondary text-secondary-foreground flex items-center justify-center text-sm font-medium mt-1">
+                  2
+                </div>
+                <p className="text-muted-foreground">
+                  Save and see your changes instantly with hot reload.
+                </p>
+              </div>
+            </div>
+          </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-transparent transition-colors flex items-center justify-center bg-primary text-primary-foreground gap-2 hover:bg-blue-600 hover:text-white font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="brightness-0"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-border transition-colors flex items-center justify-center text-foreground hover:bg-accent hover:text-accent-foreground font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center text-muted-foreground">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4 hover:text-foreground transition-colors"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4 hover:text-foreground transition-colors"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4 hover:text-foreground transition-colors"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          {/* Action Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 w-full max-w-md">
+            <a
+              className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
+              href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                className="invert"
+                src="/vercel.svg"
+                alt="Vercel logomark"
+                width={20}
+                height={20}
+              />
+              Deploy now
+            </a>
+            <a
+              className="flex-1 bg-secondary text-secondary-foreground hover:bg-secondary/80 px-6 py-3 rounded-lg font-medium transition-colors flex items-center justify-center"
+              href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Read docs
+            </a>
+          </div>
+
+          {/* Footer Links */}
+          <div className="flex flex-wrap justify-center gap-8 pt-8 border-t border-border w-full max-w-2xl">
+            <a
+              className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src="/file.svg"
+                alt="File icon"
+                width={16}
+                height={16}
+                className="opacity-70"
+              />
+              Learn
+            </a>
+            <a
+              className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src="/window.svg"
+                alt="Window icon"
+                width={16}
+                height={16}
+                className="opacity-70"
+              />
+              Examples
+            </a>
+            <a
+              className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+              href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src="/globe.svg"
+                alt="Globe icon"
+                width={16}
+                height={16}
+                className="opacity-70"
+              />
+              Go to nextjs.org →
+            </a>
+          </div>
+        </main>
+      </div>
     </div>
   );
 }
