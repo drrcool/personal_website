@@ -1,11 +1,13 @@
 import Image from "next/image";
 
+import BannerImage from "@/components/layout/banner";
 import { Button } from "@/components/ui/button";
 import { SVGIcon } from "@/components/ui/icon";
 import { D3Icon, DruidIcon, TrinoIcon } from "@/data/svgIcons";
 export default function Home(): React.ReactElement {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
+      <BannerImage />
       <div className="container mx-auto px-6 py-16 lg:px-8">
         <main className="flex flex-col items-center text-center space-y-12 max-w-4xl mx-auto">
           {/* Hero Section */}
