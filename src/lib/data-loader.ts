@@ -57,22 +57,54 @@ export interface SkillsData {
   }>;
 }
 
-// Function to load YAML data
+export interface AboutData {
+  lead: string;
+  description: string;
+}
+
+// Function to load YAML data safely
 export function loadYamlData<T>(filename: string): T {
   try {
     const filePath = path.join(process.cwd(), "src", "data", filename);
     const fileContents = fs.readFileSync(filePath, "utf8");
-    return yaml.load(fileContents) as T;
+
+    // Use safe loading to prevent code execution attacks
+    const data = yaml.load(fileContents, {
+      onWarning: (warning) => {
+        // eslint-disable-next-line no-console
+        console.warn(`YAML warning in ${filename}:`, warning.message);
+      },
+      // Use failsafe schema to prevent code execution
+      schema: yaml.FAILSAFE_SCHEMA,
+    });
+
+    if (!data) {
+      throw new Error(`Empty or invalid YAML content in ${filename}`);
+    }
+
+    return data as T;
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error(`Error loading ${filename}:`, error);
-    throw new Error(`Failed to load ${filename}`);
+
+    // Provide more specific error messages
+    if (error instanceof yaml.YAMLException) {
+      throw new Error(`YAML parsing error in ${filename}: ${error.message}`);
+    }
+
+    throw new Error(
+      `Failed to load ${filename}: ${error instanceof Error ? error.message : "Unknown error"}`
+    );
   }
 }
 
 // Specific data loading functions
 export function loadPersonalData(): PersonalData {
   return loadYamlData<PersonalData>("personal.yml");
+}
+
+export function loadAboutData(): AboutData {
+  return loadYamlData<AboutData>("about.yml");
 }
 
 export function loadExperienceData(): ExperienceData {
