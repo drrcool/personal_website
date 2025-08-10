@@ -62,6 +62,10 @@ export interface AboutData {
   description: string;
 }
 
+export interface TechStackData {
+  technologies: string[];
+}
+
 // Function to load YAML data safely
 export function loadYamlData<T>(filename: string): T {
   try {
@@ -119,12 +123,6 @@ export function loadSkillsData(): SkillsData {
   return loadYamlData<SkillsData>("skills.yml");
 }
 
-// Load all data at once (useful for pages that need multiple data sources)
-export function loadAllData() {
-  return {
-    personal: loadPersonalData(),
-    experience: loadExperienceData(),
-    projects: loadProjectsData(),
-    skills: loadSkillsData(),
-  };
+export function loadTechStackData(): TechStackData {
+  return loadYamlData<TechStackData>("tech-stack.yml");
 }
