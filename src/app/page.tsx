@@ -2,7 +2,6 @@ import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
 import { SVGIcon } from "@/components/ui/icon";
-import ArtsIcon from "@/data/svgIcons/artsIcon";
 import { D3Icon, DruidIcon, TrinoIcon } from "@/data/svgIcons";
 export default function Home(): React.ReactElement {
   return (
