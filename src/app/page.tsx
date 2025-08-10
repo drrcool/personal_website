@@ -1,7 +1,8 @@
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import ArtsIcon from "@/data/svgIcons/artsIcon";
+
+import { Button } from "@/components/ui/button";
 import { SVGIcon } from "@/components/ui/icon";
+import ArtsIcon from "@/data/svgIcons/artsIcon";
 export default function Home(): React.ReactElement {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
