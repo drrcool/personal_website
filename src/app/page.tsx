@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 export default function Home(): React.ReactElement {
@@ -57,29 +58,9 @@ export default function Home(): React.ReactElement {
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 w-full max-w-md">
-            <a
-              className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
-              href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                className="invert"
-                src="/vercel.svg"
-                alt="Vercel logomark"
-                width={20}
-                height={20}
-              />
-              Deploy now
-            </a>
-            <a
-              className="flex-1 bg-secondary text-secondary-foreground hover:bg-secondary/80 px-6 py-3 rounded-lg font-medium transition-colors flex items-center justify-center"
-              href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Read docs
-            </a>
+            <Button variant="secondary">Deploy now</Button>
+            <Button>Primary</Button>
+            <Button variant="outline">Secondary</Button>
           </div>
 
           {/* Footer Links */}
