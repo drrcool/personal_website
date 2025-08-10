@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "../styles/globals.css";
 
 export const metadata: Metadata = {
-  title: "Personal Website | Professional Portfolio",
+  title: "Richard Diaz-Cool | Data Solutions Architect",
   description:
-    "Personal portfolio website built with Next.js, TypeScript, and modern design system. Showcasing professional experience and projects.",
+    "Data Solutions Architect and full-stack developer with deep expertise in data engineering, machine learning, and modern web development. Specializing in Python, React, Apache Spark, and cloud architectures.",
 };
 
 export default function RootLayout({

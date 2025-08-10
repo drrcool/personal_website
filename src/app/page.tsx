@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
 import { SVGIcon } from "@/components/ui/icon";
-import ArtsIcon from "@/data/svgIcons/artsIcon";
+import { D3Icon, DruidIcon, TrinoIcon } from "@/data/svgIcons";
 export default function Home(): React.ReactElement {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
@@ -67,13 +67,16 @@ export default function Home(): React.ReactElement {
           {/* Icons */}
           <div className="flex flex-col sm:flex-row gap-4 w-full max-w-md items-center justify-center">
             <SVGIcon
-              size="large"
-              className="text-[#45B7D1]"
-              border
-              image={ArtsIcon}
+              size="medium"
+              className="text-[#16838d]"
+              image={DruidIcon}
             />
-            <SVGIcon size="medium" className="text-red-500" image={ArtsIcon} />
-            <SVGIcon size="small" border image={ArtsIcon} />
+            <SVGIcon size="medium" className="text-[#6d3be3]" image={D3Icon} />
+            <SVGIcon
+              size="medium"
+              image={TrinoIcon}
+              className="text-[#4ab4dc]"
+            />
           </div>
           {/* Footer Links */}
           <div className="flex flex-wrap justify-center gap-8 pt-8 border-t border-border w-full max-w-2xl">

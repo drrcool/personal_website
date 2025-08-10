@@ -33,13 +33,10 @@ const SVGIcon = ({
   VariantProps<typeof iconVariants> & {
     image: ({ className }: { className: string }) => React.ReactNode;
   }) => {
-  const Image = image;
+  const ImageComp = image;
   return (
     <div className={cn(iconVariants({ size, border, className }))} {...props}>
-      <Image
-        className={cn(iconVariants({ size, border, className }))}
-        {...props}
-      />
+      <ImageComp className={cn(iconVariants({ size, border, className }))} />
     </div>
   );
 };
