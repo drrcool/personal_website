@@ -1,0 +1,51 @@
+positions:
+  - id: "netflix-data-architect"
+    title: "Senior Data Solutions Architect"
+    company: "Netflix"
+    companyLogo: "/images/companies/netflix-logo.svg"
+    location: "Los Angeles, CA"
+    startDate: "2022-01"
+    endDate: "Present"
+    duration: "2+ years"
+    type: "Full-time"
+    description: "Lead data infrastructure projects protecting millions of customers through real-time fraud detection and partner growth analytics."
+    achievements:
+      - "Built real-time fraud detection system processing 100M+ daily events"
+      - "Developed partner growth analytics platform driving $50M+ strategic decisions"
+      - "Led cross-functional teams delivering critical business infrastructure"
+    technologies: ["Spark", "PySpark", "Trino", "Python", "Real-time Analytics"]
+
+  - id: "carnegie-princeton-astronomer"
+    title: "Postdoctoral Research Fellow"
+    company: "Carnegie Observatories & Princeton University"
+    companyLogo: "/images/companies/carnegie-logo.svg"
+    secondaryLogo: "/images/companies/princeton-logo.svg"
+    location: "Pasadena, CA / Princeton, NJ"
+    startDate: "2019-09"
+    endDate: "2021-12"
+    duration: "2.5 years"
+    type: "Research"
+    description: "Conducted galaxy evolution research using large-scale astronomical surveys and developed automated data processing pipelines."
+    achievements:
+      - "Published 3 first-author papers in top-tier astronomy journals"
+      - "Built automated data quality pipeline reducing manual review by 85%"
+      - "Led international collaboration analyzing 50,000+ galaxy spectra"
+    technologies:
+      ["Python", "SQL", "Data Pipelines", "Statistical Analysis", "HPC"]
+
+  - id: "mmt-observatory-engineer"
+    title: "Systems Engineer & Observer"
+    company: "MMT Observatory"
+    companyLogo: "/images/companies/mmt-observatory-logo.svg"
+    location: "Mount Hopkins, AZ"
+    startDate: "2017-06"
+    endDate: "2019-08"
+    duration: "2 years"
+    type: "Engineering"
+    description: "Managed telescope operations and developed optimization systems for world-class astronomical facility."
+    achievements:
+      - "Implemented queue scheduling system improving throughput by 20%"
+      - "Led night operations for $50M research facility"
+      - "Developed performance monitoring and predictive maintenance systems"
+    technologies:
+      ["Python", "Control Systems", "Optimization", "Performance Monitoring"]

@@ -1,0 +1,29 @@
+featuredProjects:
+  - id: "device-quality-prediction"
+    title: "Device Quality Prediction Platform"
+    company: "Netflix"
+    type: "ML Platform"
+    impact: "15% improvement in customer experience"
+    description: "Real-time ML pipeline analyzing device performance signals to predict and prevent streaming quality issues before they impact customers."
+    technologies:
+      ["PySpark", "ML Pipeline", "Real-time Processing", "Feature Engineering"]
+    featured: true
+
+  - id: "partner-launch-monitoring"
+    title: "Partner Launch Growth Analytics"
+    company: "Netflix"
+    type: "Analytics Platform"
+    impact: "$50M+ strategic decision support"
+    description: "Comprehensive analytics platform tracking partner performance metrics across markets, enabling data-driven expansion strategies."
+    technologies:
+      ["Spark", "Trino", "Dashboard Development", "Statistical Analysis"]
+    featured: true
+
+  - id: "observatory-queue-optimization"
+    title: "Observatory Queue Scheduling"
+    company: "MMT Observatory"
+    type: "Scheduling/Modeling"
+    impact: "~20% overhead reduction"
+    description: "Queue scheduling system guided by logistic regression and performance metrics. Increased throughput and improved operational efficiency."
+    technologies: ["Python", "Stats/Modeling", "Optimization"]
+    featured: true

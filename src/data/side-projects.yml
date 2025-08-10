@@ -1,0 +1,30 @@
+ideProjects:
+  - id: "habits-coach"
+    title: "Habits Coach (Mobile)"
+    status: "In development"
+    type: "Personal app"
+    description: "Lightweight habits and reminders coach with an uncluttered interface and offline‑first sync."
+    technologies: ["React Native", "Expo", "TypeScript"]
+    github: "https://github.com/yourname/habits-coach" # optional
+    demo: "" # optional
+    featured: true
+
+  - id: "meal-planner"
+    title: "Meal Planner"
+    status: "Archived prototype"
+    type: "Web app"
+    description: "Weekly meal planning with auto grocery lists and simple recipe capture."
+    technologies: ["Next.js", "Prisma", "Postgres"]
+    github: ""
+    demo: ""
+    featured: false
+
+  - id: "trail-finder"
+    title: "Local Trail Finder"
+    status: "In exploration"
+    type: "Web map"
+    description: "Minimal map UI to surface nearby hiking trails with filters for distance and elevation."
+    technologies: ["Mapbox", "Node API", "TypeScript"]
+    github: ""
+    demo: ""
+    featured: true

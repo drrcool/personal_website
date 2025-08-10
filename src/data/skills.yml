@@ -1,0 +1,57 @@
+skillCategories:
+  - name: "Data Engineering"
+    skills:
+      - name: "Apache Spark"
+        level: "Expert"
+        years: 4
+      - name: "PySpark"
+        level: "Expert"
+        years: 4
+      - name: "SQL/Trino"
+        level: "Expert"
+        years: 6
+      - name: "Python"
+        level: "Expert"
+        years: 8
+      - name: "ETL Pipelines"
+        level: "Advanced"
+        years: 5
+
+  - name: "Analytics & ML"
+    skills:
+      - name: "Statistical Analysis"
+        level: "Expert"
+        years: 8
+      - name: "Machine Learning"
+        level: "Advanced"
+        years: 4
+      - name: "Data Visualization"
+        level: "Advanced"
+        years: 6
+      - name: "A/B Testing"
+        level: "Advanced"
+        years: 3
+
+  - name: "Infrastructure"
+    skills:
+      - name: "Real-time Systems"
+        level: "Advanced"
+        years: 3
+      - name: "Distributed Computing"
+        level: "Advanced"
+        years: 4
+      - name: "Performance Optimization"
+        level: "Advanced"
+        years: 5
+
+  - name: "Web Development"
+    skills:
+      - name: "React"
+        level: "Intermediate"
+        years: 2
+      - name: "Node.js"
+        level: "Intermediate"
+        years: 2
+      - name: "TypeScript"
+        level: "Intermediate"
+        years: 2

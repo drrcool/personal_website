@@ -1,0 +1,16 @@
+ommunityProjects:
+  - id: "helpline-operations"
+    title: "Helpline Operations & Reporting"
+    organization: "Community Recovery Organization"
+    type: "Volunteer · Scheduling & Analytics · Anonymized"
+    description: "Coordinated scheduling and onboarding for a community recovery helpline. Built monthly engagement reporting and training materials to improve coverage and service quality."
+    technologies: ["Workflow Design", "Reporting", "Ops"]
+    anonymous: true
+
+  - id: "membership-survey"
+    title: "Membership Survey Analytics"
+    organization: "Community Recovery Organization"
+    type: "Volunteer · Survey ETL & Dashboards · Anonymized"
+    description: "Led survey design and data processing; created dashboards to analyze year‑over‑year trends and inform program priorities while preserving participant anonymity."
+    technologies: ["Survey Design", "ETL", "Dashboards"]
+    anonymous: true
