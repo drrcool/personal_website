@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "../styles/globals.css";
 
 export const metadata: Metadata = {
-  title: "Personal Website | Professional Portfolio",
+  title: "Richard Diaz-Cool | Data Solutions Architect",
   description:
     "Personal portfolio website built with Next.js, TypeScript, and modern design system. Showcasing professional experience and projects.",
 };
