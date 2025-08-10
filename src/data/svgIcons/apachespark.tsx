@@ -1,6 +1,6 @@
 import type { ClassNameProp } from "./apachedruid";
 
-export const SparkIcon = ({ className }: ClassNameProp) => {
+export const SparkIcon = ({ className }: ClassNameProp): React.ReactElement => {
   return (
     <svg
       className={className}

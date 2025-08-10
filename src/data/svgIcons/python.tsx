@@ -1,5 +1,7 @@
 import type { ClassNameProp } from "./apachedruid";
-export const PythonIcon = ({ className }: ClassNameProp) => {
+export const PythonIcon = ({
+  className,
+}: ClassNameProp): React.ReactElement => {
   return (
     <svg
       className={className}

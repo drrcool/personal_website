@@ -1,7 +1,7 @@
 export interface ClassNameProp {
   className?: string;
 }
-export const DruidIcon = ({ className }: ClassNameProp) => {
+export const DruidIcon = ({ className }: ClassNameProp): React.ReactElement => {
   return (
     <svg
       className={className}

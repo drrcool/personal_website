@@ -1,6 +1,8 @@
 import type { ClassNameProp } from "./apachedruid";
 
-export const PostgreSQLIcon = ({ className }: ClassNameProp) => {
+export const PostgreSQLIcon = ({
+  className,
+}: ClassNameProp): React.ReactElement => {
   return (
     <svg
       className={className}

@@ -1,6 +1,8 @@
 import type { ClassNameProp } from "./apachedruid";
 
-export const ScikitLearnIcon = ({ className }: ClassNameProp) => {
+export const ScikitLearnIcon = ({
+  className,
+}: ClassNameProp): React.ReactElement => {
   return (
     <svg
       className={className}

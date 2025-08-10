@@ -1,6 +1,6 @@
 import type { ClassNameProp } from "./apachedruid";
 
-export const TrinoIcon = ({ className }: ClassNameProp) => {
+export const TrinoIcon = ({ className }: ClassNameProp): React.ReactElement => {
   return (
     <svg
       className={className}
