@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-
+import ArtsIcon from "@/data/svgIcons/artsIcon";
+import { SVGIcon } from "@/components/ui/icon";
 export default function Home(): React.ReactElement {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
@@ -57,12 +58,22 @@ export default function Home(): React.ReactElement {
           </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 w-full max-w-md">
+          <div className="flex flex-col sm:flex-row gap-4 w-full max-w-md justify-center items-center">
             <Button variant="secondary">Deploy now</Button>
             <Button>Primary</Button>
             <Button variant="outline">Secondary</Button>
           </div>
-
+          {/* Icons */}
+          <div className="flex flex-col sm:flex-row gap-4 w-full max-w-md items-center justify-center">
+            <SVGIcon
+              size="large"
+              className="text-[#45B7D1]"
+              border
+              image={ArtsIcon}
+            />
+            <SVGIcon size="medium" className="text-red-500" image={ArtsIcon} />
+            <SVGIcon size="small" border image={ArtsIcon} />
+          </div>
           {/* Footer Links */}
           <div className="flex flex-wrap justify-center gap-8 pt-8 border-t border-border w-full max-w-2xl">
             <a
