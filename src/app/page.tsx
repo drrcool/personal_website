@@ -1,5 +1,8 @@
 import Image from "next/image";
 
+import { Button } from "@/components/ui/button";
+import { SVGIcon } from "@/components/ui/icon";
+import ArtsIcon from "@/data/svgIcons/artsIcon";
 export default function Home(): React.ReactElement {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
@@ -56,32 +59,22 @@ export default function Home(): React.ReactElement {
           </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 w-full max-w-md">
-            <a
-              className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
-              href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                className="invert"
-                src="/vercel.svg"
-                alt="Vercel logomark"
-                width={20}
-                height={20}
-              />
-              Deploy now
-            </a>
-            <a
-              className="flex-1 bg-secondary text-secondary-foreground hover:bg-secondary/80 px-6 py-3 rounded-lg font-medium transition-colors flex items-center justify-center"
-              href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Read docs
-            </a>
+          <div className="flex flex-col sm:flex-row gap-4 w-full max-w-md justify-center items-center">
+            <Button variant="secondary">Deploy now</Button>
+            <Button>Primary</Button>
+            <Button variant="outline">Secondary</Button>
           </div>
-
+          {/* Icons */}
+          <div className="flex flex-col sm:flex-row gap-4 w-full max-w-md items-center justify-center">
+            <SVGIcon
+              size="large"
+              className="text-[#45B7D1]"
+              border
+              image={ArtsIcon}
+            />
+            <SVGIcon size="medium" className="text-red-500" image={ArtsIcon} />
+            <SVGIcon size="small" border image={ArtsIcon} />
+          </div>
           {/* Footer Links */}
           <div className="flex flex-wrap justify-center gap-8 pt-8 border-t border-border w-full max-w-2xl">
             <a
