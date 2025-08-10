@@ -50,7 +50,6 @@ const eslintConfig = [
         "error",
         { argsIgnorePattern: "^_" },
       ],
-      "@typescript-eslint/explicit-function-return-type": "warn",
       "@typescript-eslint/no-inferrable-types": "error",
       "@typescript-eslint/no-var-requires": "error",
       "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
