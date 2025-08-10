@@ -1,30 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
-interface PersonalData {
-  name: string;
-  title: string;
-  company: string;
-  tagline: string;
-  location: string;
-  email: string;
-  linkedin: string;
-  github: string;
-  resume: string;
-}
+import { loadPersonalData, type PersonalData } from "@/lib/data-loader";
 
-// Mock data - replace with actual data loading
-const personalData: PersonalData = {
-  name: "Richard Diaz-Cool",
-  title: "Data Solutions Architect",
-  company: "Netflix",
-  tagline: "Astronomer turned data solutions architect",
-  location: "San Jose, CA",
-  email: "richardjcool@gmail.com",
-  linkedin: "https://www.linkedin.com/in/richardjcool/",
-  github: "https://github.com/drrcool",
-  resume: "/placeholder.pdf",
-};
+// Load data at component level (this will run at build time in Next.js)
+const personalData: PersonalData = loadPersonalData();
 
 const Sidebar = () => {
   return (
@@ -35,7 +15,7 @@ const Sidebar = () => {
           <div className="w-40 h-40 lg:w-60 lg:h-60">
             <Image
               src="/images/profile/hero-portrait.jpg"
-              alt="Richard Diaz-Cool"
+              alt={personalData.name}
               width={240}
               height={240}
               className="w-full h-full rounded-full object-cover border-2 border-border bg-slate-900"
