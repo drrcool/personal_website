@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+
 import yaml from "js-yaml";
 
 // Types for your data
@@ -63,6 +64,7 @@ export function loadYamlData<T>(filename: string): T {
     const fileContents = fs.readFileSync(filePath, "utf8");
     return yaml.load(fileContents) as T;
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error(`Error loading ${filename}:`, error);
     throw new Error(`Failed to load ${filename}`);
   }
