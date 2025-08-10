@@ -67,15 +67,13 @@ export default function Home(): React.ReactElement {
           {/* Icons */}
           <div className="flex flex-col sm:flex-row gap-4 w-full max-w-md items-center justify-center">
             <SVGIcon
-              size="large"
+              size="medium"
               className="text-[#16838d]"
-              border
               image={DruidIcon}
             />
             <SVGIcon size="medium" className="text-[#6d3be3]" image={D3Icon} />
             <SVGIcon
-              size="small"
-              border
+              size="medium"
               image={TrinoIcon}
               className="text-[#4ab4dc]"
             />
