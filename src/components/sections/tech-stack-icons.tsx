@@ -2,36 +2,49 @@ import { chartColors } from "@/data/chartColors/categorical-colors";
 import { getTechIcon } from "@/data/svgIcons";
 import { loadTechStackData, type TechStackData } from "@/lib/data-loader";
 
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "../ui/hover-card";
 import { SVGIcon } from "../ui/icon";
+
+const TechStackIcon = ({
+  tech,
+  color,
+}: {
+  tech: string;
+  color: string | undefined;
+}) => {
+  return (
+    <HoverCard>
+      <HoverCardTrigger asChild>
+        <SVGIcon size="small" image={getTechIcon(tech)} style={{ color }} />
+      </HoverCardTrigger>
+      <HoverCardContent className="bg-muted/80 backdrop-blur-sm text-center w-auto min-w-fit px-3 py-2">
+        <div className="space-y-1">
+          <h4 className="text-sm font-semibold">{tech}</h4>
+        </div>
+      </HoverCardContent>
+    </HoverCard>
+  );
+};
+
 const TechStackIcons = () => {
   const techStackData: TechStackData = loadTechStackData();
   const { technologies } = techStackData;
-  const MAX_ENTRIES_IN_ROW = 7;
-  // Group technologies into rows of MAX_ENTRIES_IN_ROW
-  const rows = [];
-  for (let i = 0; i < technologies.length; i += MAX_ENTRIES_IN_ROW) {
-    rows.push(technologies.slice(i, i + MAX_ENTRIES_IN_ROW));
-  }
-  console.log(chartColors);
 
   return (
-    <div className="space-y-4">
-      {rows.map((row, rowIndex) => (
-        <div key={rowIndex} className="flex justify-center">
-          <div className="flex gap-4">
-            {row.map((tech, itemIndex) => (
-              <SVGIcon
-                key={tech}
-                size="small"
-                style={{
-                  color: chartColors[rowIndex * MAX_ENTRIES_IN_ROW + itemIndex],
-                }}
-                image={getTechIcon(tech)}
-              />
-            ))}
-          </div>
-        </div>
-      ))}
+    <div className="flex justify-center">
+      <div className="flex flex-wrap gap-1 md:gap-2 justify-center max-w-full overflow-hidden px-2 md:px-4 max-w-xs sm:max-w-sm md:max-w-2xl lg:max-w-4xl">
+        {technologies.map((tech, itemIndex) => (
+          <TechStackIcon
+            key={tech}
+            tech={tech}
+            color={chartColors[itemIndex]}
+          />
+        ))}
+      </div>
     </div>
   );
 };

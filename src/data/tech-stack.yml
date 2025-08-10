@@ -1,10 +1,7 @@
 technologies:
   - "Python"
   - "Spark"
-  - "Trino"
-  - "Pandas"
   - "Scikit-learn"
-  - "PostgreSQL"
   - "Druid"
   - "React"
   - "Node.js"

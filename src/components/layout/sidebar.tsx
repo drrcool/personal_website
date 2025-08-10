@@ -18,11 +18,11 @@ const Sidebar = ({ personalData }: SidebarProps) => {
   };
 
   return (
-    <aside className="lg:sticky lg:top-6 lg:h-[calc(100vh-48px)] flex flex-col justify-start lg:justify-between border-b lg:border-b-0 lg:border-r border-border px-6 lg:pr-6 lg:pl-6 pt-8 pb-8 lg:pb-0">
+    <aside className="md:sticky md:top-6 md:h-[calc(100vh-48px)] flex flex-col justify-start md:justify-between border-b md:border-b-0 md:border-r border-border px-6 md:pr-6 md:pl-6 pt-8 pb-8 md:pb-0">
       <div className="identity">
         {/* Profile Image */}
-        <div className="mb-6 flex justify-center lg:justify-start">
-          <div className="w-40 h-40 lg:w-60 lg:h-60">
+        <div className="mb-6 flex justify-center md:justify-start">
+          <div className="w-40 h-40 md:w-60 md:h-60">
             <Image
               src="/images/profile/hero-portrait.jpg"
               alt={personalData.name}
@@ -34,18 +34,18 @@ const Sidebar = ({ personalData }: SidebarProps) => {
         </div>
 
         {/* Name and Title */}
-        <h1 className="text-2xl lg:text-2xl font-bold tracking-tight mb-2 text-foreground text-center lg:text-left">
+        <h1 className="text-2xl md:text-2xl font-bold tracking-tight mb-2 text-foreground text-center md:text-left">
           {personalData.name}
         </h1>
-        <div className="text-muted-foreground text-base mb-1 text-center lg:text-left">
+        <div className="text-muted-foreground text-base mb-1 text-center md:text-left">
           {personalData.title}
         </div>
-        <div className="text-muted-foreground text-base mb-4 text-center lg:text-left">
+        <div className="text-muted-foreground text-base mb-4 text-center md:text-left">
           {personalData.company}
         </div>
 
         {/* Navigation - Hidden on mobile */}
-        <nav aria-label="Primary navigation" className="mb-6 hidden lg:block">
+        <nav aria-label="Primary navigation" className="mb-6 hidden md:block">
           <ul className="space-y-2.5">
             <li>
               <button
@@ -102,7 +102,7 @@ const Sidebar = ({ personalData }: SidebarProps) => {
       {/* Social Links - Hidden on mobile since you'll have floating nav */}
       <div className="social-links">
         <div
-          className="flex justify-center lg:justify-start gap-3.5"
+          className="flex justify-center md:justify-start gap-3.5"
           aria-label="Social links"
         >
           <Link
