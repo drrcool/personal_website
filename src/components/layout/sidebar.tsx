@@ -1,12 +1,22 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
-import { loadPersonalData, type PersonalData } from "@/lib/data-loader";
+import { type PersonalData } from "@/lib/data-loader";
+import { useSmoothScroll } from "@/lib/hooks/use-smooth-scroll";
 
-// Load data at component level (this will run at build time in Next.js)
-const personalData: PersonalData = loadPersonalData();
+interface SidebarProps {
+  personalData: PersonalData;
+}
 
-const Sidebar = () => {
+const Sidebar = ({ personalData }: SidebarProps) => {
+  const { scrollToSection } = useSmoothScroll();
+
+  const handleNavClick = (sectionId: string) => {
+    scrollToSection(sectionId);
+  };
+
   return (
     <aside className="lg:sticky lg:top-6 lg:h-[calc(100vh-48px)] flex flex-col justify-start lg:justify-between border-b lg:border-b-0 lg:border-r border-border px-6 lg:pr-6 lg:pl-6 pt-8 pb-8 lg:pb-0">
       <div className="identity">
@@ -38,52 +48,52 @@ const Sidebar = () => {
         <nav aria-label="Primary navigation" className="mb-6 hidden lg:block">
           <ul className="space-y-2.5">
             <li>
-              <Link
-                href="#about"
-                className="text-foreground font-medium hover:text-accent transition-colors"
+              <button
+                onClick={() => handleNavClick("about")}
+                className="text-foreground font-medium hover:text-accent transition-colors text-left w-full"
               >
                 About
-              </Link>
+              </button>
             </li>
             <li>
-              <Link
-                href="#experience"
-                className="text-foreground font-medium hover:text-accent transition-colors"
+              <button
+                onClick={() => handleNavClick("experience")}
+                className="text-foreground font-medium hover:text-accent transition-colors text-left w-full"
               >
                 Experience
-              </Link>
+              </button>
             </li>
             <li>
-              <Link
-                href="#projects"
-                className="text-foreground font-medium hover:text-accent transition-colors"
+              <button
+                onClick={() => handleNavClick("projects")}
+                className="text-foreground font-medium hover:text-accent transition-colors text-left w-full"
               >
                 Projects
-              </Link>
+              </button>
             </li>
             <li>
-              <Link
-                href="#side-projects"
-                className="text-foreground font-medium hover:text-accent transition-colors"
+              <button
+                onClick={() => handleNavClick("side-projects")}
+                className="text-foreground font-medium hover:text-accent transition-colors text-left w-full"
               >
                 Side Projects
-              </Link>
+              </button>
             </li>
             <li>
-              <Link
-                href="#community"
-                className="text-foreground font-medium hover:text-accent transition-colors"
+              <button
+                onClick={() => handleNavClick("community")}
+                className="text-foreground font-medium hover:text-accent transition-colors text-left w-full"
               >
                 Community Impact
-              </Link>
+              </button>
             </li>
             <li>
-              <Link
-                href="#resume-publications"
-                className="text-foreground font-medium hover:text-accent transition-colors"
+              <button
+                onClick={() => handleNavClick("resume-publications")}
+                className="text-foreground font-medium hover:text-accent transition-colors text-left w-full"
               >
                 Resume & Publications
-              </Link>
+              </button>
             </li>
           </ul>
         </nav>
