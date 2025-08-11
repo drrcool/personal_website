@@ -16,34 +16,34 @@ export interface PersonalData {
   resume: string;
 }
 
+export interface ExperiencePosition {
+  id: string;
+  title: string;
+  company: string;
+  companyLogo: string;
+  location: string;
+  startDate: string;
+  endDate: string;
+  duration: string;
+  type: string;
+  description: string;
+  achievements: string[];
+  technologies: string[];
+}
 export interface ExperienceData {
-  positions: Array<{
-    id: string;
-    title: string;
-    company: string;
-    companyLogo: string;
-    location: string;
-    startDate: string;
-    endDate: string;
-    duration: string;
-    type: string;
-    description: string;
-    achievements: string[];
-    technologies: string[];
-  }>;
+  positions: ExperiencePosition[];
 }
 
+export interface Project {
+  id: string;
+  title: string;
+  description: string;
+  technologies?: string[];
+  link?: string;
+  linkTitle?: string;
+}
 export interface ProjectsData {
-  featuredProjects: Array<{
-    id: string;
-    title: string;
-    company: string;
-    type: string;
-    impact: string;
-    description: string;
-    technologies: string[];
-    featured: boolean;
-  }>;
+  featuredProjects: Project[];
 }
 
 export interface SkillsData {
@@ -57,22 +57,58 @@ export interface SkillsData {
   }>;
 }
 
-// Function to load YAML data
+export interface AboutData {
+  lead: string;
+  description: string;
+}
+
+export interface TechStackData {
+  technologies: string[];
+}
+
+// Function to load YAML data safely
 export function loadYamlData<T>(filename: string): T {
   try {
     const filePath = path.join(process.cwd(), "src", "data", filename);
     const fileContents = fs.readFileSync(filePath, "utf8");
-    return yaml.load(fileContents) as T;
+
+    // Use safe loading to prevent code execution attacks
+    const data = yaml.load(fileContents, {
+      onWarning: (warning) => {
+        // eslint-disable-next-line no-console
+        console.warn(`YAML warning in ${filename}:`, warning.message);
+      },
+      // Use failsafe schema to prevent code execution
+      schema: yaml.FAILSAFE_SCHEMA,
+    });
+
+    if (!data) {
+      throw new Error(`Empty or invalid YAML content in ${filename}`);
+    }
+
+    return data as T;
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error(`Error loading ${filename}:`, error);
-    throw new Error(`Failed to load ${filename}`);
+
+    // Provide more specific error messages
+    if (error instanceof yaml.YAMLException) {
+      throw new Error(`YAML parsing error in ${filename}: ${error.message}`);
+    }
+
+    throw new Error(
+      `Failed to load ${filename}: ${error instanceof Error ? error.message : "Unknown error"}`
+    );
   }
 }
 
 // Specific data loading functions
 export function loadPersonalData(): PersonalData {
   return loadYamlData<PersonalData>("personal.yml");
+}
+
+export function loadAboutData(): AboutData {
+  return loadYamlData<AboutData>("about.yml");
 }
 
 export function loadExperienceData(): ExperienceData {
@@ -87,12 +123,10 @@ export function loadSkillsData(): SkillsData {
   return loadYamlData<SkillsData>("skills.yml");
 }
 
-// Load all data at once (useful for pages that need multiple data sources)
-export function loadAllData() {
-  return {
-    personal: loadPersonalData(),
-    experience: loadExperienceData(),
-    projects: loadProjectsData(),
-    skills: loadSkillsData(),
-  };
+export function loadTechStackData(): TechStackData {
+  return loadYamlData<TechStackData>("tech-stack.yml");
+}
+
+export function loadCommunityImpactData(): ProjectsData {
+  return loadYamlData<ProjectsData>("community-impact.yml");
 }

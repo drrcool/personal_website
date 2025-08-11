@@ -1,18 +1,28 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
-import { loadPersonalData, type PersonalData } from "@/lib/data-loader";
+import { type PersonalData } from "@/lib/data-loader";
+import { useSmoothScroll } from "@/lib/hooks/use-smooth-scroll";
 
-// Load data at component level (this will run at build time in Next.js)
-const personalData: PersonalData = loadPersonalData();
+interface SidebarProps {
+  personalData: PersonalData;
+}
 
-const Sidebar = () => {
+const Sidebar = ({ personalData }: SidebarProps) => {
+  const { scrollToSection } = useSmoothScroll();
+
+  const handleNavClick = (sectionId: string) => {
+    scrollToSection(sectionId);
+  };
+
   return (
-    <aside className="lg:sticky lg:top-6 lg:h-[calc(100vh-48px)] flex flex-col justify-start lg:justify-between border-b lg:border-b-0 lg:border-r border-border px-6 lg:pr-6 lg:pl-6 pt-8 pb-8 lg:pb-0">
+    <aside className="md:sticky md:top-6 md:h-[calc(100vh-48px)] flex flex-col justify-start md:justify-between border-b md:border-b-0 md:border-r border-border px-6 md:pr-6 md:pl-6 pt-8 pb-8 md:pb-0">
       <div className="identity">
         {/* Profile Image */}
-        <div className="mb-6 flex justify-center lg:justify-start">
-          <div className="w-40 h-40 lg:w-60 lg:h-60">
+        <div className="mb-6 flex justify-center md:justify-start">
+          <div className="w-40 h-40 md:w-60 md:h-60">
             <Image
               src="/images/profile/hero-portrait.jpg"
               alt={personalData.name}
@@ -24,66 +34,66 @@ const Sidebar = () => {
         </div>
 
         {/* Name and Title */}
-        <h1 className="text-2xl lg:text-2xl font-bold tracking-tight mb-2 text-foreground text-center lg:text-left">
+        <h1 className="text-2xl md:text-2xl font-bold tracking-tight mb-2 text-foreground text-center md:text-left">
           {personalData.name}
         </h1>
-        <div className="text-muted-foreground text-base mb-1 text-center lg:text-left">
+        <div className="text-muted-foreground text-base mb-1 text-center md:text-left">
           {personalData.title}
         </div>
-        <div className="text-muted-foreground text-base mb-4 text-center lg:text-left">
+        <div className="text-muted-foreground text-base mb-4 text-center md:text-left">
           {personalData.company}
         </div>
 
         {/* Navigation - Hidden on mobile */}
-        <nav aria-label="Primary navigation" className="mb-6 hidden lg:block">
+        <nav aria-label="Primary navigation" className="mb-6 hidden md:block">
           <ul className="space-y-2.5">
             <li>
-              <Link
-                href="#about"
-                className="text-foreground font-medium hover:text-accent transition-colors"
+              <button
+                onClick={() => handleNavClick("About")}
+                className="text-foreground font-medium hover:text-accent transition-colors text-left w-full"
               >
                 About
-              </Link>
+              </button>
             </li>
             <li>
-              <Link
-                href="#experience"
-                className="text-foreground font-medium hover:text-accent transition-colors"
+              <button
+                onClick={() => handleNavClick("Experience")}
+                className="text-foreground font-medium hover:text-accent transition-colors text-left w-full"
               >
                 Experience
-              </Link>
+              </button>
             </li>
             <li>
-              <Link
-                href="#projects"
-                className="text-foreground font-medium hover:text-accent transition-colors"
+              <button
+                onClick={() => handleNavClick("Projects")}
+                className="text-foreground font-medium hover:text-accent transition-colors text-left w-full"
               >
                 Projects
-              </Link>
+              </button>
             </li>
-            <li>
-              <Link
-                href="#side-projects"
-                className="text-foreground font-medium hover:text-accent transition-colors"
+            {/* <li>
+              <button
+                onClick={() => handleNavClick("Side Projects")}
+                className="text-foreground font-medium hover:text-accent transition-colors text-left w-full"
               >
                 Side Projects
-              </Link>
-            </li>
+              </button>
+            </li> */}
             <li>
-              <Link
-                href="#community"
-                className="text-foreground font-medium hover:text-accent transition-colors"
+              <button
+                onClick={() => handleNavClick("Community Impact")}
+                className="text-foreground font-medium hover:text-accent transition-colors text-left w-full"
               >
                 Community Impact
-              </Link>
+              </button>
             </li>
             <li>
-              <Link
-                href="#resume-publications"
-                className="text-foreground font-medium hover:text-accent transition-colors"
+              <button
+                onClick={() => handleNavClick("Resume & Publications")}
+                className="text-foreground font-medium hover:text-accent transition-colors text-left w-full"
               >
                 Resume & Publications
-              </Link>
+              </button>
             </li>
           </ul>
         </nav>
@@ -92,7 +102,7 @@ const Sidebar = () => {
       {/* Social Links - Hidden on mobile since you'll have floating nav */}
       <div className="social-links">
         <div
-          className="flex justify-center lg:justify-start gap-3.5"
+          className="flex justify-center md:justify-start gap-3.5"
           aria-label="Social links"
         >
           <Link
