@@ -16,34 +16,36 @@ export interface PersonalData {
   resume: string;
 }
 
+export interface ExperiencePosition {
+  id: string;
+  title: string;
+  company: string;
+  companyLogo: string;
+  location: string;
+  startDate: string;
+  endDate: string;
+  duration: string;
+  type: string;
+  description: string;
+  achievements: string[];
+  technologies: string[];
+}
 export interface ExperienceData {
-  positions: Array<{
-    id: string;
-    title: string;
-    company: string;
-    companyLogo: string;
-    location: string;
-    startDate: string;
-    endDate: string;
-    duration: string;
-    type: string;
-    description: string;
-    achievements: string[];
-    technologies: string[];
-  }>;
+  positions: ExperiencePosition[];
 }
 
+export interface Project {
+  id: string;
+  title: string;
+  company: string;
+  type: string;
+  impact: string;
+  description: string;
+  technologies: string[];
+  featured: boolean;
+}
 export interface ProjectsData {
-  featuredProjects: Array<{
-    id: string;
-    title: string;
-    company: string;
-    type: string;
-    impact: string;
-    description: string;
-    technologies: string[];
-    featured: boolean;
-  }>;
+  featuredProjects: Project[];
 }
 
 export interface SkillsData {
