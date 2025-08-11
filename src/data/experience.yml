@@ -18,8 +18,8 @@ positions:
     title: "Systems Engineer & Observer"
     company: "MMT Observatory"
     companyLogo: "/images/companies/MMT.jpg"
-    location: "Mount Hopkins, AZ"
-    duration: "2 years"
+    location: "Tucson, AZ"
+    duration: "3 years"
     type: "Engineering"
     description: "Engineered critical systems for world-class astronomical facility, developing automation and ML-powered monitoring solutions that optimized telescope operations and prevented equipment failures."
     achievements:
@@ -32,7 +32,7 @@ positions:
     company: "Carnegie Observatories & Princeton University"
     companyLogo: "/images/companies/Princeton.png"
     location: "Pasadena, CA / Princeton, NJ"
-    duration: "2.5 years"
+    duration: "4 years"
     type: "Research"
     description: "Led large-scale astronomical data analysis initiatives, building automated processing pipelines and research tooling that accelerated scientific discovery and improved reproducibility across the field."
     achievements:
