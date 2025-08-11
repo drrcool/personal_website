@@ -1,29 +1,12 @@
 featuredProjects:
-  - id: "device-quality-prediction"
-    title: "Device Quality Prediction Platform"
-    company: "Netflix"
-    type: "ML Platform"
-    impact: "15% improvement in customer experience"
-    description: "Real-time ML pipeline analyzing device performance signals to predict and prevent streaming quality issues before they impact customers."
-    technologies:
-      ["PySpark", "ML Pipeline", "Real-time Processing", "Feature Engineering"]
-    featured: true
+  - id: "feature-reach-dash"
+    title: "Tooling to Understand Potential Feature Reach"
+    description: "The CE device ecosystem is a complex system with many moving parts. I build tooling to help understand the reach of potential new features by measuring the cardinality of an arbitrary set of technical requirements and logged device capabilities.  Data volume exceeds 3 trillion rows of data per day. The dashboard is fronted by a custom React UI and powered through ThetaSketch in Druid.  Measured reach values are augmented with ML forecasts into the future to help prioritize feature development."
+    technologies: ["PySpark", "React", "Druid", "Prophet"]
 
   - id: "partner-launch-monitoring"
-    title: "Partner Launch Growth Analytics"
-    company: "Netflix"
-    type: "Analytics Platform"
-    impact: "$50M+ strategic decision support"
-    description: "Comprehensive analytics platform tracking partner performance metrics across markets, enabling data-driven expansion strategies."
-    technologies:
-      ["Spark", "Trino", "Dashboard Development", "Statistical Analysis"]
-    featured: true
-
-  - id: "observatory-queue-optimization"
-    title: "Observatory Queue Scheduling"
-    company: "MMT Observatory"
-    type: "Scheduling/Modeling"
-    impact: "~20% overhead reduction"
-    description: "Queue scheduling system guided by logistic regression and performance metrics. Increased throughput and improved operational efficiency."
-    technologies: ["Python", "Stats/Modeling", "Optimization"]
-    featured: true
+    title: "Partner Firmware Monitoring"
+    description: "Build an early detection and alerting framework to monitor the in-field performance of devices running new firmware versions.  This allowed the device reliability team to identify and address issues before they became critical saving impact on millions of customers."
+    link: "https://netflixtechblog.com/detecting-performance-anomalies-in-external-firmware-deployments-ed41b1bfcf46"
+    linkTitle: "Netflix Tech Blog"
+    technologies: ["Statistical Analysis", "Metaflow", "Python"]

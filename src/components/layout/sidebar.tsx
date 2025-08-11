@@ -49,7 +49,7 @@ const Sidebar = ({ personalData }: SidebarProps) => {
           <ul className="space-y-2.5">
             <li>
               <button
-                onClick={() => handleNavClick("about")}
+                onClick={() => handleNavClick("About")}
                 className="text-foreground font-medium hover:text-accent transition-colors text-left w-full"
               >
                 About
@@ -57,7 +57,7 @@ const Sidebar = ({ personalData }: SidebarProps) => {
             </li>
             <li>
               <button
-                onClick={() => handleNavClick("experience")}
+                onClick={() => handleNavClick("Experience")}
                 className="text-foreground font-medium hover:text-accent transition-colors text-left w-full"
               >
                 Experience
@@ -65,23 +65,23 @@ const Sidebar = ({ personalData }: SidebarProps) => {
             </li>
             <li>
               <button
-                onClick={() => handleNavClick("projects")}
+                onClick={() => handleNavClick("Projects")}
                 className="text-foreground font-medium hover:text-accent transition-colors text-left w-full"
               >
                 Projects
               </button>
             </li>
-            <li>
+            {/* <li>
               <button
-                onClick={() => handleNavClick("side-projects")}
+                onClick={() => handleNavClick("Side Projects")}
                 className="text-foreground font-medium hover:text-accent transition-colors text-left w-full"
               >
                 Side Projects
               </button>
-            </li>
+            </li> */}
             <li>
               <button
-                onClick={() => handleNavClick("community")}
+                onClick={() => handleNavClick("Community Impact")}
                 className="text-foreground font-medium hover:text-accent transition-colors text-left w-full"
               >
                 Community Impact
@@ -89,7 +89,7 @@ const Sidebar = ({ personalData }: SidebarProps) => {
             </li>
             <li>
               <button
-                onClick={() => handleNavClick("resume-publications")}
+                onClick={() => handleNavClick("Resume & Publications")}
                 className="text-foreground font-medium hover:text-accent transition-colors text-left w-full"
               >
                 Resume & Publications

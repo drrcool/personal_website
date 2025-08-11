@@ -37,12 +37,10 @@ export interface ExperienceData {
 export interface Project {
   id: string;
   title: string;
-  company: string;
-  type: string;
-  impact: string;
   description: string;
-  technologies: string[];
-  featured: boolean;
+  technologies?: string[];
+  link?: string;
+  linkTitle?: string;
 }
 export interface ProjectsData {
   featuredProjects: Project[];
@@ -127,4 +125,8 @@ export function loadSkillsData(): SkillsData {
 
 export function loadTechStackData(): TechStackData {
   return loadYamlData<TechStackData>("tech-stack.yml");
+}
+
+export function loadCommunityImpactData(): ProjectsData {
+  return loadYamlData<ProjectsData>("community-impact.yml");
 }
