@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import "../styles/globals.css";
 
 export const metadata: Metadata = {
-  title: "Richard Diaz-Cool | Data Solutions Architect",
+  title: "Richard Diaz-Cool | Analytics Engineer",
   icons: {
     icon: "/favicon.svg",
   },
   description:
-    "Data Solutions Architect and full-stack developer with deep expertise in data engineering, machine learning, and modern web development. Specializing in Python, React, Apache Spark, and cloud architectures.",
+    "Analytics Engineer and full-stack developer with deep expertise in data engineering, machine learning, and modern web development. Specializing in Python, React, Apache Spark, and cloud architectures.",
 };
 
 export default function RootLayout({
