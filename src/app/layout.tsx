@@ -4,6 +4,7 @@ import "../styles/globals.css";
 import GoogleAnalytics from "@/components/analytics/google-analytics";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://richardcool.org"),
   title: "Richard Diaz-Cool | Analytics Engineer",
   description:
     "Analytics Engineer and full-stack developer with deep expertise in data engineering, machine learning, and modern web development. Specializing in Python, React, Apache Spark, and cloud architectures.",
@@ -22,9 +23,6 @@ export const metadata: Metadata = {
   creator: "Richard Diaz-Cool",
   publisher: "Richard Diaz-Cool",
   robots: "index, follow",
-  viewport: "width=device-width, initial-scale=1",
-  themeColor: "#8b5cf6",
-  colorScheme: "dark",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
@@ -59,6 +57,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://richardcool.org",
   },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#8b5cf6",
+  colorScheme: "dark",
 };
 
 export default function RootLayout({
