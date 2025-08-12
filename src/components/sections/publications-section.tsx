@@ -11,11 +11,15 @@ const PublicationItem = ({ publication }: { publication: Publication }) => {
       <div className="flex flex-row justify-between">
         <div className="metadata">
           <div className="flex flex-row gap-2">
-            <div className="text-sm text-gray-500">{publication.authors}</div>
-            <div className="text-sm text-gray-500">{publication.journal}</div>
-            <div className="text-sm text-muted-foreground">{publication.authors}</div>
-            <div className="text-sm text-muted-foreground">{publication.journal}</div>
-            <div className="text-sm text-muted-foreground">{publication.year}</div>
+            <div className="text-sm text-muted-foreground">
+              {publication.authors}
+            </div>
+            <div className="text-sm text-muted-foreground">
+              {publication.journal}
+            </div>
+            <div className="text-sm text-muted-foreground">
+              {publication.year}
+            </div>
           </div>
         </div>
         <div className="links">
