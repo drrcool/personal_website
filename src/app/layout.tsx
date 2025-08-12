@@ -3,11 +3,60 @@ import "../styles/globals.css";
 
 export const metadata: Metadata = {
   title: "Richard Diaz-Cool | Analytics Engineer",
-  icons: {
-    icon: "/favicon.svg",
-  },
   description:
     "Analytics Engineer and full-stack developer with deep expertise in data engineering, machine learning, and modern web development. Specializing in Python, React, Apache Spark, and cloud architectures.",
+  keywords: [
+    "analytics engineer",
+    "data engineering",
+    "machine learning",
+    "full-stack developer",
+    "Python",
+    "React",
+    "Apache Spark",
+    "data science",
+    "web development",
+  ],
+  authors: [{ name: "Richard Diaz-Cool" }],
+  creator: "Richard Diaz-Cool",
+  publisher: "Richard Diaz-Cool",
+  robots: "index, follow",
+  viewport: "width=device-width, initial-scale=1",
+  themeColor: "#8b5cf6",
+  colorScheme: "dark",
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://richardcool.org",
+    siteName: "Richard Diaz-Cool",
+    title: "Richard Diaz-Cool | Analytics Engineer",
+    description:
+      "Analytics Engineer and full-stack developer with deep expertise in data engineering, machine learning, and modern web development.",
+    images: [
+      {
+        url: "/images/profile/hero-portrait.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Richard Diaz-Cool - Analytics Engineer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@dr_r_cool",
+    creator: "@dr_r_cool",
+    title: "Richard Diaz-Cool | Analytics Engineer",
+    description:
+      "Analytics Engineer and full-stack developer with deep expertise in data engineering, machine learning, and modern web development.",
+    images: ["/images/profile/hero-portrait.jpg"],
+  },
+  alternates: {
+    canonical: "https://richardcool.org",
+  },
 };
 
 export default function RootLayout({
