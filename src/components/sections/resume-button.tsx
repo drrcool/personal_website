@@ -9,7 +9,15 @@ const ResumeButton = () => {
         window.open("/resume.pdf");
       }}
     >
-      Resume
+    <Button asChild>
+      <a
+        href="/resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open resume PDF in a new tab"
+      >
+        Resume
+      </a>
     </Button>
   );
 };
