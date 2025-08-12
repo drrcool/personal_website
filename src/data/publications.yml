@@ -1,0 +1,440 @@
+publications:
+  - title: "The Rate and Spatial Distribution of Novae in M31 as Determined by a 20 Year Survey"
+    authors: "Rector, T. A., et al"
+    journal: "ApJ"
+    year: 2022
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2022ApJ...936..117R"
+    archivePrefix: "arXiv"
+    eprint: "2207.05689"
+
+  - title: "Preprocessing among the Infalling Galaxy Population of EDisCS Clusters"
+    authors: "Just, D. W., et al"
+    journal: "ApJ"
+    year: 2019
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2019ApJ...885....6J"
+    archivePrefix: "arXiv"
+    eprint: "1506.02051"
+
+  - title: "OMEGA - OSIRIS Mapping of Emission-line Galaxies in A901/2 - III. Galaxy properties across projected phase space in A901/2"
+    authors: "Weinzirl, T., et al"
+    journal: "MNRAS"
+    year: 2017
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2017MNRAS.471..182W"
+    archivePrefix: "arXiv"
+    eprint: "1706.05199"
+
+  - title: "PRIMUS: One- and Two-halo Galactic Conformity at 0.2 < z < 1"
+    authors: "Berti, A. M., et al"
+    journal: "ApJ"
+    year: 2017
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2017ApJ...834...87B"
+    archivePrefix: "arXiv"
+    eprint: "1608.05084"
+
+  - title: "PRIMUS + DEEP2: Clustering of X-Ray, Radio, and IR-AGNs at z~0.7"
+    authors: "Mendez, A. J., et al"
+    journal: "ApJ"
+    year: 2016
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2016ApJ...821...55M"
+    archivePrefix: "arXiv"
+    eprint: "1504.06284"
+
+  - title: "PRIMUS: The Effect of Physical Scale on the Luminosity Dependence of Galaxy Clustering via Cross-correlations"
+    authors: "Bray, A. D., et al"
+    journal: "ApJ"
+    year: 2015
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2015ApJ...811...90B"
+    archivePrefix: "arXiv"
+    eprint: "1502.01348"
+
+  - title: "A Spectroscopic Survey of the Fields of 28 Strong Gravitational Lenses"
+    authors: "Momcheva, I. G., et al"
+    journal: "ApJS"
+    year: 2015
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2015ApJS..219...29M"
+    archivePrefix: "arXiv"
+    eprint: "1503.02074"
+
+  - title: "Dark Matter Halo Models of Stellar Mass-dependent Galaxy Clustering in PRIMUS+DEEP2 at 0.2>z>1.2"
+    authors: "Skibba, R. A., et al"
+    journal: "ApJ"
+    year: 2015
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2015ApJ...807..152S"
+    archivePrefix: "arXiv"
+    eprint: "1503.00731"
+
+  - title: "PRIMUS: The Relationship between Star Formation and AGN Accretion"
+    authors: "Azadi, M., et al"
+    journal: "ApJ"
+    year: 2015
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2015ApJ...806..187A"
+    archivePrefix: "arXiv"
+    eprint: "1407.1975"
+
+  - title: "PRIMUS: Effects of Galaxy Environment on the Quiescent Fraction Evolution at z < 0.8"
+    authors: "Hahn, C., et al"
+    journal: "ApJ"
+    year: 2015
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2015ApJ...806..162H"
+    archivePrefix: "arXiv"
+    eprint: "1412.7162"
+
+  - title: "PRIMUS: Galaxy Clustering as a Function of Luminosity and Color at 0.2 < z < 1"
+    authors: "Skibba, R. A., et al"
+    journal: "ApJ"
+    year: 2014
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2014ApJ...784..128S"
+    archivePrefix: "arXiv"
+    eprint: "1310.1093"
+
+  - title: "Dual Supermassive Black Hole Candidates in the AGN and Galaxy Evolution Survey"
+    authors: "Comerford, J. M., et al"
+    journal: "ApJ"
+    year: 2013
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2013ApJ...777...64C"
+    archivePrefix: "arXiv"
+    eprint: "1309.2284"
+
+  - title: "PRIMUS: An Observationally Motivated Model to Connect the Evolution of the Active Galactic Nucleus and Galaxy Populations out to z ~ 1"
+    authors: "Aird, J., et al"
+    journal: "ApJ"
+    year: 2013
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2013ApJ...775...41A"
+    archivePrefix: "arXiv"
+    eprint: "1301.1689"
+
+  - title: "PRIMUS: Infrared and X-Ray AGN Selection Techniques at 0.2 < z < 1.2"
+    authors: "Mendez, A. J., et al"
+    journal: "ApJ"
+    year: 2013
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2013ApJ...770...40M"
+    archivePrefix: "arXiv"
+    eprint: "1302.2920"
+
+  - title: "The Distance to the Massive Galactic Cluster Westerlund 2 from a Spectroscopic and HST Photometric Study"
+    authors: "Vargas Álvarez, C. A., et al"
+    journal: "AJ"
+    year: 2013
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2013AJ....145..125V"
+    archivePrefix: "arXiv"
+    eprint: "1302.0863"
+
+  - title: "The PRIsm MUlti-object Survey (PRIMUS). II. Data Reduction and Redshift Fitting"
+    authors: "Cool, R. J., et al"
+    journal: "ApJ"
+    year: 2013
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2013ApJ...767..118C"
+    archivePrefix: "arXiv"
+    eprint: "1303.2672"
+
+  - title: "PRIMUS: Constraints on Star Formation Quenching and Galaxy Merging, and the Evolution of the Stellar Mass Function from z = 0-1"
+    authors: "Moustakas, J., et al"
+    journal: "ApJ"
+    year: 2013
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2013ApJ...767...50M"
+    archivePrefix: "arXiv"
+    eprint: "1301.1688"
+
+  - title: "AGES: The AGN and Galaxy Evolution Survey"
+    authors: "Kochanek, C. S., et al"
+    journal: "ApJS"
+    year: 2012
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2012ApJS..200....8K"
+    archivePrefix: "arXiv"
+    eprint: "1110.4371"
+
+  - title: "Photometric redshift requirements for lens galaxies in galaxy-galaxy lensing analyses"
+    authors: "Nakajima, R., et al"
+    journal: "MNRAS"
+    year: 2012
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2012MNRAS.420.3240N"
+    archivePrefix: "arXiv"
+    eprint: "1107.1395"
+
+  - title: "The Galaxy Optical Luminosity Function from the AGN and Galaxy Evolution Survey"
+    authors: "Cool, R. J., et al"
+    journal: "ApJ"
+    year: 2012
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2012ApJ...748...10C"
+    archivePrefix: "arXiv"
+    eprint: "1201.2954"
+
+  - title: "PRIMUS: The Dependence of AGN Accretion on Host Stellar Mass and Color"
+    authors: "Aird, J., et al"
+    journal: "ApJ"
+    year: 2012
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2012ApJ...746...90A"
+    archivePrefix: "arXiv"
+    eprint: "1107.4368"
+
+  - title: "Evolution of the Stellar Mass-Metallicity Relation Since z=0.75"
+    authors: "Moustakas, J., et al"
+    journal: "arXiv e-prints"
+    year: 2011
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2011arXiv1112.3300M"
+    archivePrefix: "arXiv"
+    eprint: "1112.3300"
+
+  - title: "Constraining Halo Occupation Properties of X-Ray Active Galactic Nuclei Using Clustering of Chandra Sources in the Boötes Survey Region"
+    authors: "Starikova, S., et al"
+    journal: "ApJ"
+    year: 2011
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2011ApJ...741...15S"
+    archivePrefix: "arXiv"
+    eprint: "1010.1577"
+
+  - title: "The PRIsm MUlti-object Survey (PRIMUS). I. Survey Overview and Characteristics"
+    authors: "Coil, A. L., et al"
+    journal: "ApJ"
+    year: 2011
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2011ApJ...741....8C"
+    archivePrefix: "arXiv"
+    eprint: "1011.4307"
+
+  - title: "Clustering of Obscured and Unobscured Quasars in the Boötes Field: Placing Rapidly Growing Black Holes in the Cosmic Web"
+    authors: "Hickox, R. C., et al"
+    journal: "ApJ"
+    year: 2011
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2011ApJ...731..117H"
+    archivePrefix: "arXiv"
+    eprint: "1102.4850"
+
+  - title: "PRIMUS: Enhanced Specific Star Formation Rates in Close Galaxy Pairs"
+    authors: "Wong, K. C., et al"
+    journal: "ApJ"
+    year: 2011
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2011ApJ...728..119W"
+    archivePrefix: "arXiv"
+    eprint: "1012.1324"
+
+  - title: "The Mid-IR- and X-ray-Selected QSO Luminosity Function"
+    authors: "Assef, R. J., et al"
+    journal: "ApJ"
+    year: 2011
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2011ApJ...728...56A"
+    archivePrefix: "arXiv"
+    eprint: "1001.4529"
+
+  - title: "PRIMUS: Obscured Star Formation on the Red Sequence"
+    authors: "Zhu, G., et al"
+    journal: "ApJ"
+    year: 2011
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2011ApJ...726..110Z"
+    archivePrefix: "arXiv"
+    eprint: "1011.4308"
+
+  - title: "The Evolution of the Star Formation Rate of Galaxies at 0.0 <= z <= 1.2"
+    authors: "Rujopakarn, W., et al"
+    journal: "ApJ"
+    year: 2010
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2010ApJ...718..1171R"
+    archivePrefix: "arXiv"
+    eprint: "1006.4359"
+
+  - title: "Mid-infrared Variability from the Spitzer Deep Wide-field Survey"
+    authors: "Kozłowski, S., et al"
+    journal: "ApJ"
+    year: 2010
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2010ApJ...716..530K"
+    archivePrefix: "arXiv"
+    eprint: "1002.3365"
+
+  - title: "Low-Resolution Spectral Templates for Active Galactic Nuclei and Galaxies from 0.03 to 30 μm"
+    authors: "Assef, R. J., et al"
+    journal: "ApJ"
+    year: 2010
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2010ApJ...713..970A"
+    archivePrefix: "arXiv"
+    eprint: "0909.3849"
+
+  - title: "Active Galactic Nuclei and the Truncation of Star Formation in K+A Galaxies"
+    authors: "Brown, M. J. I., et al"
+    journal: "ApJ"
+    year: 2009
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2009ApJ...703..150B"
+    archivePrefix: "arXiv"
+    eprint: "0907.3185"
+
+  - title: "The Spitzer Deep, Wide-field Survey"
+    authors: "Ashby, M. L. N., et al"
+    journal: "ApJ"
+    year: 2009
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2009ApJ...701..428A"
+    archivePrefix: "arXiv"
+    eprint: "0906.0024"
+
+  - title: "Mid-Infrared Galaxy Luminosity Functions from the AGN and Galaxy Evolution Survey"
+    authors: "Dai, X., et al"
+    journal: "ApJ"
+    year: 2009
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2009ApJ...697..506D"
+    archivePrefix: "arXiv"
+    eprint: "0902.2812"
+
+  - title: "Host Galaxies, Clustering, Eddington Ratios, and Evolution of Radio, X-Ray, and Infrared-Selected AGNs"
+    authors: "Hickox, R. C., et al"
+    journal: "ApJ"
+    year: 2009
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2009ApJ...696..891H"
+    archivePrefix: "arXiv"
+    eprint: "0901.4121"
+
+  - title: "Luminosity Function Constraints on the Evolution of Massive Red Galaxies since z ~ 0.9"
+    authors: "Cool, R. J., et al"
+    journal: "ApJ"
+    year: 2008
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2008ApJ...682..919C"
+    archivePrefix: "arXiv"
+    eprint: "0804.4516"
+
+  - title: "Redshift Distribution of Extragalactic 24 μm Sources"
+    authors: "Desai, V., et al"
+    journal: "ApJ"
+    year: 2008
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2008ApJ...679..1204D"
+    archivePrefix: "arXiv"
+    eprint: "0802.2489"
+
+  - title: "Low-Resolution Spectral Templates for Galaxies from 0.2 to 10 μm"
+    authors: "Assef, R. J., et al"
+    journal: "ApJ"
+    year: 2008
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2008ApJ...676..286A"
+    archivePrefix: "arXiv"
+    eprint: "0708.1513"
+
+  - title: "Empirical measurements of massive galaxy and active galaxy evolution"
+    authors: "Cool, R. J."
+    journal: "PhD Thesis"
+    year: 2008
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2008PhDT.........8C"
+    archivePrefix: null
+    eprint: null
+
+  - title: "A Large Population of Mid-Infrared-selected, Obscured Active Galaxies in the Boötes Field"
+    authors: "Hickox, R. C., et al"
+    journal: "ApJ"
+    year: 2007
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2007ApJ...671.1365H"
+    archivePrefix: "arXiv"
+    eprint: "0708.3678"
+
+  - title: "zBootes: z-Band Photometry in the NOAO Deep Wide-Field Survey Bootes Field"
+    authors: "Cool, R. J."
+    journal: "ApJS"
+    year: 2007
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2007ApJS..169...21C"
+    archivePrefix: "arXiv"
+    eprint: "astro-ph/0611508"
+
+  - title: "Density profiles of galaxy groups and clusters from SDSS galaxy-galaxy weak lensing"
+    authors: "Mandelbaum, R., et al"
+    journal: "MNRAS"
+    year: 2006
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2006MNRAS.372..758M"
+    archivePrefix: "arXiv"
+    eprint: "astro-ph/0605476"
+
+  - title: "Black Hole Masses and Eddington Ratios at 0.3 < z < 4"
+    authors: "Kollmeier, J. A., et al"
+    journal: "ApJ"
+    year: 2006
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2006ApJ...648..128K"
+    archivePrefix: "arXiv"
+    eprint: "astro-ph/0508657"
+
+  - title: "The Discovery of Three New z>5 Quasars in the AGN and Galaxy Evolution Survey"
+    authors: "Cool, R. J., et al"
+    journal: "AJ"
+    year: 2006
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2006AJ....132..823C"
+    archivePrefix: "arXiv"
+    eprint: "astro-ph/0605030"
+
+  - title: "An MMT Hectospec Redshift Survey of 24 μm Sources in the Spitzer First Look Survey"
+    authors: "Papovich, C., et al"
+    journal: "AJ"
+    year: 2006
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2006AJ....132..231P"
+    archivePrefix: "arXiv"
+    eprint: "astro-ph/0512623"
+
+  - title: "The Active Galactic Nuclei Contribution to the Mid-Infrared Emission of Luminous Infrared Galaxies"
+    authors: "Brand, K., et al"
+    journal: "ApJ"
+    year: 2006
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2006ApJ...644..143B"
+    archivePrefix: "arXiv"
+    eprint: "astro-ph/0602198"
+
+  - title: "Quasars in the COSMOS Field"
+    authors: "Prescott, M. K. M., et al"
+    journal: "ApJ"
+    year: 2006
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2006ApJ...644..100P"
+    archivePrefix: "arXiv"
+    eprint: "astro-ph/0602315"
+
+  - title: "Very Small Scale Clustering and Merger Rate of Luminous Red Galaxies"
+    authors: "Masjedi, M., et al"
+    journal: "ApJ"
+    year: 2006
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2006ApJ...644...54M"
+    archivePrefix: "arXiv"
+    eprint: "astro-ph/0512166"
+
+  - title: "A Spectroscopic Survey of Faint Quasars in the SDSS Deep Stripe. I. Preliminary Results from the Co-added Catalog"
+    authors: "Jiang, L., et al"
+    journal: "AJ"
+    year: 2006
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2006AJ....131.2788J"
+    archivePrefix: "arXiv"
+    eprint: "astro-ph/0602569"
+
+  - title: "SDSS Preburst Observations of Recent Gamma-Ray Burst Fields"
+    authors: "Cool, R. J., et al"
+    journal: "PASP"
+    year: 2006
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2006PASP..118..733C"
+    archivePrefix: "arXiv"
+    eprint: "astro-ph/0601218"
+
+  - title: "Broadband Optical Properties of Massive Galaxies: The Dispersion around the Field Galaxy Color-Magnitude Relation Out to z~0.4"
+    authors: "Cool, R. J., et al"
+    journal: "AJ"
+    year: 2006
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2006AJ....131..736C"
+    archivePrefix: "arXiv"
+    eprint: "astro-ph/0510301"
+
+  - title: "Mid-Infrared Selection of Active Galaxies"
+    authors: "Stern, D., et al"
+    journal: "ApJ"
+    year: 2005
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2005ApJ...631..163S"
+    archivePrefix: "arXiv"
+    eprint: "astro-ph/0410523"
+
+  - title: "Lifting the Iron Curtain: Toward an Understanding of the Iron Stars XX Oph and AS 325"
+    authors: "Cool, R. J., et al"
+    journal: "PASP"
+    year: 2005
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2005PASP..117..462C"
+    archivePrefix: "arXiv"
+    eprint: "astro-ph/0502336"
+
+  - title: "An Optical Survey of the Position Error Contours of Unidentified High-Energy Gamma-Ray Sources at Galactic Latitude |b|>20°"
+    authors: "Bloom, S. D., et al"
+    journal: "AJ"
+    year: 2004
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2004AJ....128...56B"
+    archivePrefix: "arXiv"
+    eprint: "astro-ph/0404059"
+
+  - title: "Expansion of the R4 H2O Maser Arc near Cepheus A HW2"
+    authors: "Gallimore, J. F., et al"
+    journal: "ApJ"
+    year: 2003
+    adsurl: "https://ui.adsabs.harvard.edu/abs/2003ApJ...586..306G"
+    archivePrefix: "arXiv"
+    eprint: "astro-ph/0211462"
