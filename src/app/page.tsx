@@ -4,6 +4,7 @@ import AboutSection from "@/components/sections/about-section";
 import CommunityImpactSection from "@/components/sections/community-impact";
 import ExperienceSection from "@/components/sections/experience-section";
 import ProjectsSection from "@/components/sections/projects-section";
+import ResumeAndPublicationsSection from "@/components/sections/resume-and-pubs";
 import { loadPersonalData, type PersonalData } from "@/lib/data-loader";
 
 export default function Home(): React.ReactElement {
@@ -19,6 +20,7 @@ export default function Home(): React.ReactElement {
           <ExperienceSection />
           <ProjectsSection />
           <CommunityImpactSection />
+          <ResumeAndPublicationsSection />
         </div>
       </div>
     </>
