@@ -53,7 +53,7 @@ const PublicationsSection = ({
         <ol className="flex flex-col gap-4 mt-8">
           {publications.publications.map((item, index) => (
             <li key={index}>
-              <PublicationItem key={index} publication={item} />
+              <PublicationItem publication={item} />
             </li>
           ))}
         </ol>
