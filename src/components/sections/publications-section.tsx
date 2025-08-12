@@ -26,7 +26,7 @@ const PublicationItem = ({ publication }: { publication: Publication }) => {
             >
               ADS
             </a>
-            {publication.eprint !== "null" && (
+            {publication.eprint && publication.eprint !== "null" && (
               <a
                 href={`https://arxiv.org/abs/${publication.eprint}`}
                 target="_blank"
