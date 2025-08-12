@@ -4,12 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const ResumeButton = () => {
   return (
-    <Button
-      onClick={() => {
-        window.open("/resume.pdf");
-      }}
-    >
-    <Button asChild>
+    <Button>
       <a
         href="/resume.pdf"
         target="_blank"
