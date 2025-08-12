@@ -34,6 +34,20 @@ export interface ExperienceData {
   positions: ExperiencePosition[];
 }
 
+export interface Publication {
+  title: string;
+  authors: string;
+  journal: string;
+  year: number;
+  adsurl: string;
+  archivePrefix: string;
+  eprint: string;
+}
+
+export interface PublicationsData {
+  publications: Publication[];
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -129,4 +143,8 @@ export function loadTechStackData(): TechStackData {
 
 export function loadCommunityImpactData(): ProjectsData {
   return loadYamlData<ProjectsData>("community-impact.yml");
+}
+
+export function loadPublicationsData(): PublicationsData {
+  return loadYamlData<PublicationsData>("publications.yml");
 }

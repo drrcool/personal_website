@@ -14,7 +14,7 @@ export default function Home(): React.ReactElement {
     <>
       <BannerImage />
       <div className="flex flex-col md:flex-row gap-0">
-        <Sidebar personalData={personalData} />
+        <Sidebar personalData={personalData} mainPage />
         <div className="container px-8 py-5 sm:mx-6 sm:px-6 lg:mx-10 lg:px-8 lg:pl-0">
           <AboutSection />
           <ExperienceSection />
