@@ -9,25 +9,11 @@ export const useSmoothScroll = () => {
 
   const scrollToSection = useCallback(
     (sectionId: string) => {
-      if (!isMounted) {
-        console.log("Production debug: Not mounted yet");
-        return;
-      }
-
-      console.log(`Production debug: Attempting to scroll to ${sectionId}`);
-      console.log(
-        "Production debug: Document ready state:",
-        document.readyState
-      );
-      console.log(
-        "Production debug: Available sections:",
-        document.querySelectorAll("section[id]")
-      );
+      if (!isMounted) return;
 
       try {
         const element = document.getElementById(sectionId);
         if (element) {
-          console.log(`Production debug: Found element, scrolling`);
           // Try smooth scrolling first
           if ("scrollBehavior" in document.documentElement.style) {
             element.scrollIntoView({
