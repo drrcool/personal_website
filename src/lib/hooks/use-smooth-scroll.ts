@@ -9,29 +9,15 @@ export const useSmoothScroll = () => {
 
   const scrollToSection = useCallback(
     (sectionId: string) => {
-      if (!isMounted) {
-        console.log("Not mounted yet, skipping scroll");
-        return;
-      }
-
-      console.log(`Attempting to scroll to section: ${sectionId}`);
+      if (!isMounted) return;
 
       const element = document.getElementById(sectionId);
       if (element) {
-        console.log(`Found element, scrolling to:`, element);
         element.scrollIntoView({
           behavior: "smooth",
           block: "start",
           inline: "nearest",
         });
-      } else {
-        console.log(`Element with id "${sectionId}" not found`);
-        // Try to find by partial match
-        const allSections = document.querySelectorAll("section[id]");
-        console.log(
-          "Available section IDs:",
-          Array.from(allSections).map((s) => s.id)
-        );
       }
     },
     [isMounted]
