@@ -11,7 +11,7 @@ positions:
       - "Created innovative data solutions allowing complex custom cardinality calculations in order to understand the reach of potential UI features based on their underlying technical requirements and logged device capabilities"
       - "Shipped end-to-end analytics: Spark-powered ETL pipelines fronted by responsive dashboards and tooling using React and Tableau for high-dimensional data exploration"
       - "Developed forecasting for device ecosystem to inform strategic planning, retirements, and engineering investments"
-      - "Build ML models to tag device quality alerts; reducing false positives and saving ~0.5 FTE annually"
+      - "Built ML models to tag device quality alerts; reducing false positives and saving ~0.5 FTE annually"
       - "Designed monitoring systems for partner firmware rollouts; surfaced critical issues early, protecting millions of members"
 
   - id: "mmt-observatory-engineer"
