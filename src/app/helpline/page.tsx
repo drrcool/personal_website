@@ -1,9 +1,6 @@
-export default function Home(): React.ReactElement {
-  return (
-    <>
-      <div className="flex flex-col md:flex-row gap-0">
-        Dashboard will go here
-      </div>
-    </>
-  );
+import { redirect } from "next/navigation";
+
+export default function HelplineHome() {
+  // Automatically redirect anyone that lands on the helpline page to calls
+  redirect("/helpline/calls");
 }
