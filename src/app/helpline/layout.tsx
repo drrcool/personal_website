@@ -6,7 +6,7 @@ export default function HelplineLayout({
   children: React.ReactNode;
 }>): React.ReactElement {
   return (
-    <div className="flex flex-col gap-0 w-full">
+    <div className="helpline-container flex flex-col gap-0 w-full">
       <HelplineHeader />
       <div className="block m-5 w-full h-full">{children}</div>
     </div>
