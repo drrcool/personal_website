@@ -8,7 +8,7 @@ export default function HelplineLayout({
   return (
     <div className="helpline-container flex flex-col gap-0 w-full">
       <HelplineHeader />
-      <div className="block m-5 w-full h-full">{children}</div>
+      <div className="block m-2 w-full h-full">{children}</div>
     </div>
   );
 }
