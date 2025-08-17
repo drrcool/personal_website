@@ -14,7 +14,7 @@ export const ProjectLink = ({
 }) => {
   return (
     <a
-      className="pointer-cursor text-accent-foreground"
+      className="cursor-pointer text-accent-foreground"
       href={link}
       target="_blank"
       rel="noopener noreferrer"
