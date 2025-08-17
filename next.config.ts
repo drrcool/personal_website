@@ -1,8 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Enable static exports for better Netlify compatibility
-  output: "export",
-
   // Disable image optimization for static export
   images: {
     unoptimized: true,

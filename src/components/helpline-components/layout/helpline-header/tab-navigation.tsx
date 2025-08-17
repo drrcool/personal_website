@@ -1,11 +1,9 @@
-"use client";
-
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-import Calls from "../../pages/calls";
-import Operators from "../../pages/operators";
-import Reports from "../../pages/reports";
-import Schedule from "../../pages/schedule";
+import Calls from "../../dashboard-views/calls";
+import Operators from "../../dashboard-views/operators";
+import Reports from "../../dashboard-views/reports";
+import Schedule from "../../dashboard-views/schedule";
 
 const TABS = {
   Calls: "calls",
