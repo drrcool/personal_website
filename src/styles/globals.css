@@ -169,11 +169,6 @@
   --shadow-2xl: var(--shadow-2xl);
 }
 
-/* Base styles */
-* {
-  border-color: var(--color-border);
-}
-
 body {
   font-feature-settings:
     "rlig" 1,
