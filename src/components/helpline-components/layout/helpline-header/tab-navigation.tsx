@@ -18,11 +18,11 @@ export const HelplineTabs = () => {
   return (
     <div className="flex w-full max-w-sm flex-col gap-6">
       <Tabs defaultValue={TABS.Calls}>
-        <TabsList>
+        <TabsList className="bg-background">
           <TabsTrigger value={TABS.Calls}>Calls</TabsTrigger>
-          <TabsTrigger value={TABS.Reports}>Reports</TabsTrigger>
           <TabsTrigger value={TABS.Schedule}>Schedule</TabsTrigger>
           <TabsTrigger value={TABS.Operators}>Operators</TabsTrigger>
+          <TabsTrigger value={TABS.Reports}>Reports</TabsTrigger>
         </TabsList>
         <TabsContent value={TABS.Calls}>
           <Calls />
