@@ -55,7 +55,7 @@ export const ExperienceDescription = ({
 }: {
   description: string;
 }) => {
-  return <div className="text-md text-accent ">{description}</div>;
+  return <div className="text-md text-accent-foreground">{description}</div>;
 };
 
 const ExperienceItem = ({ position }: { position: ExperiencePosition }) => {
