@@ -4,9 +4,7 @@ const BannerHeader = () => {
   return (
     <div className="flex flex-row gap-2 w-full justify-between items-center h-16 px-6 py-4 bg-card shadow">
       <div className="flex flex-row gap-6 items-center">
-        <div className="text-xl font-semibold text-[var(--dashboard-text-primary)]">
-          Helpline Dashboard
-        </div>
+        <div className="text-xl font-semibold">Helpline Dashboard</div>
         <HelplineSelector />
       </div>
     </div>
