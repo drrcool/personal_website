@@ -14,7 +14,7 @@ const TABS = {
 
 export const HelplineTabs = () => {
   return (
-    <div className="flex w-full max-w-sm flex-col gap-6">
+    <div className="flex w-full flex-col gap-6">
       <Tabs defaultValue={TABS.Calls}>
         <TabsList className="bg-background">
           <TabsTrigger value={TABS.Calls}>Calls</TabsTrigger>
