@@ -1,10 +1,11 @@
 import { Card } from "@/components/ui/card";
 
 import StackedArea from "../../charts/stacked-area";
-import { getCallTimeSeries } from "../../dataFetchers/getCallTimeSeries";
+import { useCallTimeSeries } from "../../dataFetchers/useCallTimeSeries";
+import type { HelplineID } from "../../state/helpline-store";
 
-const CallTimeSeries = async () => {
-  const data = await getCallTimeSeries({ helplineId: "GSC" });
+const CallTimeSeries = ({ helplineId }: { helplineId: HelplineID }) => {
+  const { data } = useCallTimeSeries({ helplineId });
   const nameMap = {
     connected_call_cnt: "Connected Calls",
     missed_call_cnt: "Missed Calls",

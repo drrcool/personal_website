@@ -14,7 +14,7 @@ import {
 import { chartColors } from "@/styles/chartColors";
 
 interface StackedAreaChartProps {
-  data: Array<Record<string, number | string | null>>;
+  data: object[];
   xKey: string;
   yKey: string[];
   nameMap?: Record<string, string>;
@@ -32,7 +32,10 @@ const StackedAreaChart = ({
 }: StackedAreaChartProps) => {
   const chartData = data.map((item) => ({
     ...item,
-    __total: yKey.reduce((acc, key) => acc + ((item[key] as number) ?? 0), 0),
+    __total: yKey.reduce(
+      (acc, key) => acc + ((item[key as keyof typeof item] as number) ?? 0),
+      0
+    ),
   }));
   return (
     <ResponsiveContainer width="100%" height={400}>
