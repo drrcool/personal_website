@@ -1,6 +1,11 @@
 @import "tailwindcss";
 @import "./tweakcn.css";
 
+:root {
+  --color-semantic-failure: oklch(0.6368 0.2078 25.3313);
+  --color-semantic-success: oklch(0.5676 0.2021 283.0838);
+}
+
 body {
   letter-spacing: var(--tracking-normal);
   font-feature-settings:

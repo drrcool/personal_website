@@ -1,0 +1,4 @@
+- [ ] Build loading indicator and implement into a component holder component.
+- [ ] Update the styling on the axis labels for time series charts
+- [ ] Add semantic color lookup for calls
+- [ ] Determine a better failure semantic color
