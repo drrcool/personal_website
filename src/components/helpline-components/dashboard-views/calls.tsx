@@ -2,9 +2,9 @@ import CallTimeSeries from "./calls/call-time-series";
 
 const Calls = () => {
   return (
-    <div className="m-4 flex flex-col gap-5 w-full">
+    <div className="flex flex-col gap-5">
       <div>Calls</div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 h-[600px]">
+      <div className="grid grid-cols-2">
         <CallTimeSeries />
       </div>
     </div>
