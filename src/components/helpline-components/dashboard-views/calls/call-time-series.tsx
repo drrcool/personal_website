@@ -17,7 +17,7 @@ const CallTimeSeries = async () => {
         </div>
         <div>
           <StackedArea
-            data={data as unknown as Array<Record<string, number>>}
+            data={data}
             xKey="dateint"
             yKey={["connected_call_cnt", "missed_call_cnt"]}
             nameMap={nameMap}

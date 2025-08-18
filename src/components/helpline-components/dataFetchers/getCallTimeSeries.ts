@@ -43,7 +43,7 @@ export const getCallTimeSeries = async ({
   const joinedData = [...(historicalData || []), ...(data || [])];
   const formattedData = joinedData.map((item) => ({
     ...item,
-    connected_call_cnt: item.call_cnt - item.missed_call_cnt,
+    connected_call_cnt: (item.call_cnt ?? 0) - (item.missed_call_cnt ?? 0),
     dateint: `${item.year}-${item.month}-01`,
   }));
   return formattedData;
