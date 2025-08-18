@@ -5,13 +5,26 @@ import { getCallTimeSeries } from "../../dataFetchers/getCallTimeSeries";
 
 const CallTimeSeries = async () => {
   const data = await getCallTimeSeries({ helplineId: "GSC" });
+  const nameMap = {
+    connected_call_cnt: "Connected Calls",
+    missed_call_cnt: "Missed Calls",
+  };
   return (
     <Card className="p-4 text-card">
-      <StackedArea
-        data={data as unknown as Array<Record<string, number>>}
-        xKey="dateint"
-        yKey={["call_cnt", "missed_call_cnt"]}
-      />
+      <div className="flex flex-col gap-2">
+        <div className="text-lg font-bold text-card-foreground">
+          Call Volume
+        </div>
+        <div>
+          <StackedArea
+            data={data as unknown as Array<Record<string, number>>}
+            xKey="dateint"
+            yKey={["connected_call_cnt", "missed_call_cnt"]}
+            nameMap={nameMap}
+            yAxisLabel="Calls"
+          />
+        </div>
+      </div>
     </Card>
   );
 };

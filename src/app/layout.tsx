@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "../styles/globals.css";
+import { Roboto } from "next/font/google";
 
 import GoogleAnalytics from "@/components/analytics/google-analytics";
 
@@ -66,6 +67,13 @@ export const viewport = {
   colorScheme: "dark",
 };
 
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  display: "swap",
+  variable: "--font-sans",
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -74,7 +82,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <head></head>
-      <body className="font-sans antialiased bg-background text-foreground">
+      <body
+        className={`${roboto.variable} font-sans antialiased bg-background text-foreground`}
+      >
         {children}
         <GoogleAnalytics />
       </body>

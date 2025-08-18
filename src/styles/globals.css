@@ -20,3 +20,60 @@ h6 {
   line-height: 1.2;
   font-weight: 600;
 }
+
+/* Recharts defaults (colors + typography) */
+.recharts-wrapper,
+.recharts-default-legend,
+.recharts-tooltip-wrapper,
+.recharts-text,
+.recharts-tooltip-item {
+  font-family:
+    var(--font-sans),
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+}
+
+/* Axes */
+.recharts-cartesian-axis-line,
+.recharts-cartesian-axis-tick-line {
+  stroke: var(--border);
+}
+
+.recharts-cartesian-axis-tick-value {
+  fill: var(--card-foreground);
+}
+
+/* Grid */
+.recharts-cartesian-grid line {
+  stroke: var(--card-foreground);
+  opacity: 0.5;
+}
+
+/* Legend */
+.recharts-default-legend text {
+  fill: var(--foreground);
+}
+
+/* Tooltip */
+.recharts-tooltip-wrapper {
+  border: 0 !important;
+}
+
+.recharts-default-tooltip {
+  border-radius: 15px;
+  background-color: var(--card) !important;
+  color: var(--foreground);
+  border: 1px solid var(--muted) !important;
+}
+
+.recharts-tooltip-item {
+  background-color: var(--card);
+}
+
+.recharts-text {
+  fill: var(--muted-foreground);
+}
