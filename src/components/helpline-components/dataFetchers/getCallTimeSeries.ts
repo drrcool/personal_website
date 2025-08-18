@@ -1,5 +1,3 @@
-import { groupBy, sum, summarize, tidy } from "@tidyjs/tidy";
-
 import { createClient } from "@/lib/supabase";
 
 interface UseCallTimeSeriesProps {
@@ -17,30 +15,35 @@ export const getCallTimeSeries = async ({
     .select(
       `
     month, year,
-    is_missed_call
+    call_cnt:count(),
+    missed_call_cnt:is_missed_call.sum()
   `
     )
-    .eq("helpline_id", helplineId);
+    .eq("helpline_id", helplineId)
+    .gte("dateint", 20220301);
 
   if (startDate) {
-    query = query.gte("call_time", startDate);
+    query = query.gte("dateint", startDate);
   }
-  query = query.limit(10000);
+  query = query.order("year, month").limit(100000);
   const { data } = await query;
 
-  if (!data) return [];
-  const outputData = tidy(
-    data,
-    groupBy(
-      ["month", "year"],
-      [
-        summarize({
-          call_cnt: (items) => items.length,
-          missed_call_cnt: sum("is_missed_call"),
-        }),
-      ]
-    )
-  );
+  let historicalQuery = supabase
+    .from("historical_call_cnts")
+    .select("year, month:month_of_year, call_cnt, missed_call_cnt")
+    .eq("helpline_id", helplineId)
+    .lt("dateint", 20220301);
 
-  return outputData;
+  if (startDate) {
+    historicalQuery = historicalQuery.gte("dateint", startDate);
+  }
+  historicalQuery = historicalQuery.order("year, month_of_year").limit(100000);
+
+  const { data: historicalData } = await historicalQuery;
+  const joinedData = [...(historicalData || []), ...(data || [])];
+  const formattedData = joinedData.map((item) => ({
+    ...item,
+    dateint: `${item.year}-${item.month}-01`,
+  }));
+  return formattedData;
 };
