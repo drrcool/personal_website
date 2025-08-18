@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "../styles/globals.css";
+import { Roboto } from "next/font/google";
 
 import GoogleAnalytics from "@/components/analytics/google-analytics";
 
@@ -66,6 +67,13 @@ export const viewport = {
   colorScheme: "dark",
 };
 
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  display: "swap",
+  variable: "--font-sans",
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -73,24 +81,10 @@ export default function RootLayout({
 }>): React.ReactElement {
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                document.documentElement.className = 'dark';
-                document.documentElement.style.colorScheme = 'dark';
-                // Force dark mode CSS variables
-                document.documentElement.style.setProperty('--background', 'oklch(0.2303 0.0125 264.2926)');
-                document.documentElement.style.setProperty('--foreground', 'oklch(0.9219 0 0)');
-                document.documentElement.style.setProperty('--card', 'oklch(0.321 0.0078 223.6661)');
-                document.documentElement.style.setProperty('--card-foreground', 'oklch(0.9219 0 0)');
-              })();
-            `,
-          }}
-        />
-      </head>
-      <body className="font-sans antialiased bg-muted text-foreground">
+      <head></head>
+      <body
+        className={`${roboto.variable} font-sans antialiased bg-background text-foreground`}
+      >
         {children}
         <GoogleAnalytics />
       </body>

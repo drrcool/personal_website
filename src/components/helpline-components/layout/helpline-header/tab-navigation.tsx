@@ -1,11 +1,9 @@
-"use client";
-
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-import Calls from "../../pages/calls";
-import Operators from "../../pages/operators";
-import Reports from "../../pages/reports";
-import Schedule from "../../pages/schedule";
+import Calls from "../../dashboard-views/calls";
+import Operators from "../../dashboard-views/operators";
+import Reports from "../../dashboard-views/reports";
+import Schedule from "../../dashboard-views/schedule";
 
 const TABS = {
   Calls: "calls",
@@ -16,13 +14,13 @@ const TABS = {
 
 export const HelplineTabs = () => {
   return (
-    <div className="flex w-full max-w-sm flex-col gap-6">
+    <div className="flex w-full flex-col gap-6">
       <Tabs defaultValue={TABS.Calls}>
-        <TabsList>
+        <TabsList className="bg-background">
           <TabsTrigger value={TABS.Calls}>Calls</TabsTrigger>
-          <TabsTrigger value={TABS.Reports}>Reports</TabsTrigger>
           <TabsTrigger value={TABS.Schedule}>Schedule</TabsTrigger>
           <TabsTrigger value={TABS.Operators}>Operators</TabsTrigger>
+          <TabsTrigger value={TABS.Reports}>Reports</TabsTrigger>
         </TabsList>
         <TabsContent value={TABS.Calls}>
           <Calls />
