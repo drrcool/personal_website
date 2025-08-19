@@ -10,7 +10,7 @@ interface LastCall {
   operator_name: string | null;
 }
 
-export function useLastRecievedCall(helplineId: HelplineID) {
+export function useLastReceivedCall(helplineId: HelplineID) {
   const supabase = useSupabaseBrowser();
   const [data, setData] = useState<LastCall | null>(null);
   const [isLoading, setIsLoading] = useState(false);
