@@ -29,7 +29,7 @@ export const LastNDaysSelector = ({
         onValueChange={(value) => setValue(Number(value))}
       >
         <SelectTrigger className="w-[200px]">
-          <SelectValue placeholder="Select a helpline" />
+          <SelectValue placeholder="Select time range" />
         </SelectTrigger>
         <SelectContent>
           <SelectGroup>
