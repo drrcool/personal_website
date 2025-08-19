@@ -38,7 +38,6 @@ export const LastNDaysSelector = ({
             <SelectItem value="90">90 days</SelectItem>
             <SelectItem value="180">6 months</SelectItem>
             <SelectItem value="365">1 year</SelectItem>
-            <SelectItem value="7300">All</SelectItem>
           </SelectGroup>
         </SelectContent>
       </Select>

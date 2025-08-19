@@ -3,8 +3,8 @@ import { LastNDaysSelector } from "../inputs/last-n-days-selector";
 import { useHelplineStore } from "../state/helpline-store";
 
 import CallTimeSeries from "./calls/call-time-series";
+import CallsSummaryRow from "./calls/calls-summary-row";
 import CallsYoYPanel from "./calls/calls-yoy-panel";
-import MostRecentCall from "./calls/most-recent-call";
 
 const Calls = () => {
   const { lastNDays, setLastNDays } = useHelplineStore();
@@ -22,11 +22,7 @@ const Calls = () => {
           </div>
         </div>
       </div>
-      <div id="summary-row">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <MostRecentCall />
-        </div>
-      </div>
+      <CallsSummaryRow />
       <div className="grid grid-cols-2 gap-4">
         <CallTimeSeries />
         <CallsYoYPanel />
