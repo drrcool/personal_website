@@ -2,7 +2,7 @@ import { PhoneCall, PhoneMissed } from "lucide-react";
 
 import { useLastReceivedCall } from "../../dataFetchers/useLastReceivedCall";
 import SummaryCard from "../../layout/summary-card";
-import type { HelplineID } from "../../state/helpline-store";
+import { useHelplineStore } from "../../state/helpline-store";
 
 const defaultDateTimeReturn = {
   year: "--",
@@ -37,13 +37,14 @@ const getCallColor = (isMissedCall: number | null | undefined) => {
   return "text-[var(--color-semantic-success)]";
 };
 
-const MostRecentCall = ({ helplineId }: { helplineId: HelplineID }) => {
+const MostRecentCall = () => {
+  const { helplineId } = useHelplineStore();
   const { data: lastCall, isLoading } = useLastReceivedCall(helplineId);
   const cleanedDate = formatDateAndTime(lastCall?.call_time);
   return (
     <SummaryCard
       isLoading={isLoading}
-      height={200}
+      height={150}
       cardTitle="Most Recent Call"
       icon={getCallIcon(lastCall?.is_missed_call)}
       iconClass={getCallColor(lastCall?.is_missed_call)}

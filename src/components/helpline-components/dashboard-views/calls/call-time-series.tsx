@@ -1,16 +1,9 @@
 import StackedArea from "../../charts/stacked-area";
 import { useCallTimeSeries } from "../../dataFetchers/useCallTimeSeries";
 import SummaryCard from "../../layout/summary-card";
-import type { HelplineID } from "../../state/helpline-store";
 
-const CallTimeSeries = ({
-  helplineId,
-  height = 500,
-}: {
-  helplineId: HelplineID;
-  height?: number;
-}) => {
-  const { data, isLoading } = useCallTimeSeries({ helplineId });
+const CallTimeSeries = ({ height = 500 }: { height?: number }) => {
+  const { data, isLoading } = useCallTimeSeries();
   const nameMap = {
     connected_call_cnt: "Connected Calls",
     missed_call_cnt: "Missed Calls",
