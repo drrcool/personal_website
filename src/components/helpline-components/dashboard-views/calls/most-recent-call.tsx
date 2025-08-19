@@ -38,7 +38,7 @@ const getCallColor = (isMissedCall: number | null | undefined) => {
 };
 
 const MostRecentCall = ({ helplineId }: { helplineId: HelplineID }) => {
-  const { data: lastCall, isLoading } = useLastRecievedCall(helplineId);
+  const { data: lastCall, isLoading } = useLastReceivedCall(helplineId);
   const cleanedDate = formatDateAndTime(lastCall?.call_time);
   return (
     <SummaryCard
