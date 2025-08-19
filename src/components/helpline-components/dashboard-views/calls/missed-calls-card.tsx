@@ -7,9 +7,11 @@ import type { CallsSummaryCardProps } from "./calls-summary-row";
 const MissedCallsCard = ({ data, isLoading }: CallsSummaryCardProps) => {
   const metric = data.current_missed_call_cnt;
   const comparisonMetric =
-    ((data.current_missed_call_cnt - data.year_ago_missed_call_cnt) /
-      data.year_ago_missed_call_cnt) *
-    100;
+    data.year_ago_missed_call_cnt > 0
+      ? ((data.current_missed_call_cnt - data.year_ago_missed_call_cnt) /
+          data.year_ago_missed_call_cnt) *
+        100
+      : 0;
   const isPositive = comparisonMetric > 0;
   return (
     <SummaryCard

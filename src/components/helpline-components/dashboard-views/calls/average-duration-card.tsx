@@ -7,9 +7,11 @@ import type { CallsSummaryCardProps } from "./calls-summary-row";
 const AverageDurationCard = ({ data, isLoading }: CallsSummaryCardProps) => {
   const metric = data.current_call_duration_avg ?? 0;
   const comparisonMetric =
-    ((data.current_call_duration_avg - data.year_ago_call_duration_avg) /
-      data.year_ago_call_duration_avg) *
-    100;
+    data.year_ago_call_duration_avg > 0
+      ? ((data.current_call_duration_avg - data.year_ago_call_duration_avg) /
+          data.year_ago_call_duration_avg) *
+        100
+      : 0;
   const isPositive = comparisonMetric > 0;
   return (
     <SummaryCard
