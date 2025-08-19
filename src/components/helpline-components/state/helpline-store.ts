@@ -1,23 +1,75 @@
+import { useEffect } from "react";
 import { create } from "zustand";
+
+// Formatted as YYYYMMDD
+const getNDaysAgo = (n: number): number => {
+  const date = new Date();
+  date.setDate(date.getDate() - n);
+  return Number(date.toISOString().split("T")?.[0]?.replace(/-/g, ""));
+};
 
 export type HelplineID = "GSC" | "NORCAL";
 interface HelplineStateValues {
   helplineId: HelplineID;
+  lastNDays: number;
+  timeseriesLastNDays: number;
+  lastNDaysDateint: number;
+  timeseriesStartDate: number;
 }
 const defaultState: HelplineStateValues = {
   helplineId: "GSC",
+  lastNDays: 30,
+  timeseriesLastNDays: 7300,
+  lastNDaysDateint: getNDaysAgo(30),
+  timeseriesStartDate: getNDaysAgo(7300),
 };
 
 interface HelplineState extends HelplineStateValues {
   setHelplineId: (helplineId: HelplineID) => void;
+  setLastNDays: (lastNDays: number) => void;
+  setLastNDaysDateint: (lastNDaysDateint: number) => void;
+  setTimeseriesStartDate: (startDate: number) => void;
+  setTimeseriesLastNDays: (lastNDays: number) => void;
 }
-const useHelplineStore = create<HelplineState>((set) => ({
+export const useStore = create<HelplineState>((set) => ({
   ...defaultState,
   setHelplineId: (helplineId: HelplineID) => set({ helplineId }),
+  setLastNDays: (lastNDays: number) => set({ lastNDays }),
+  setLastNDaysDateint: (lastNDaysDateInt: number) =>
+    set({ lastNDaysDateint: lastNDaysDateInt }),
+  setTimeseriesStartDate: (startDate: number) =>
+    set({ timeseriesStartDate: startDate }),
+  setTimeseriesLastNDays: (lastNDays: number) =>
+    set({ timeseriesLastNDays: lastNDays }),
 }));
 
-export const useHelplineId = () => {
-  const helplineId = useHelplineStore((state) => state.helplineId);
-  const setHelplineId = useHelplineStore((state) => state.setHelplineId);
-  return { helplineId, setHelplineId };
+export const useHelplineStore = () => {
+  const {
+    helplineId,
+    lastNDays,
+    lastNDaysDateint,
+    timeseriesStartDate,
+    timeseriesLastNDays,
+    setHelplineId,
+    setLastNDays,
+    setLastNDaysDateint,
+    setTimeseriesStartDate,
+    setTimeseriesLastNDays,
+  } = useStore();
+  useEffect(() => {
+    setTimeseriesStartDate(getNDaysAgo(timeseriesLastNDays));
+  }, [timeseriesLastNDays, setTimeseriesStartDate]);
+  useEffect(() => {
+    setLastNDaysDateint(getNDaysAgo(lastNDays));
+  }, [lastNDays, setLastNDaysDateint]);
+  return {
+    helplineId,
+    lastNDays,
+    lastNDaysDateint,
+    setHelplineId,
+    setLastNDays,
+    timeseriesLastNDays,
+    timeseriesStartDate,
+    setTimeseriesLastNDays,
+  };
 };

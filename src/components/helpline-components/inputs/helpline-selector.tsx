@@ -10,10 +10,10 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-import { useHelplineId } from "../state/helpline-store";
+import { useHelplineStore } from "../state/helpline-store";
 
 export const HelplineSelector = () => {
-  const { helplineId, setHelplineId } = useHelplineId();
+  const { helplineId, setHelplineId } = useHelplineStore();
   return (
     <Select value={helplineId} onValueChange={setHelplineId}>
       <SelectTrigger className="w-[200px]">

@@ -53,9 +53,7 @@ const StackedAreaChart = ({
           tick={{ transform: "translate(0, 6)" }}
           fill=""
           stroke=""
-          tickLine={false}
-          axisLine={false}
-          minTickGap={10}
+          minTickGap={20}
           tickFormatter={(value) => {
             const split = value.split("-");
             const year = split[0].slice(2);
@@ -89,14 +87,7 @@ const StackedAreaChart = ({
           stroke="var(--foreground)"
         />
         <Tooltip />
-        <YAxis
-          width={50}
-          axisLine={false}
-          tickLine={false}
-          type="number"
-          fill=""
-          stroke=""
-        >
+        <YAxis width={50} type="number" fill="" stroke="">
           <Label
             position="insideLeft"
             style={{ textAnchor: "middle" }}

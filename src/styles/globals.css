@@ -49,12 +49,12 @@ h6 {
 }
 
 .recharts-cartesian-axis-tick-value {
-  fill: var(--card-foreground);
+  fill: var(--foreground);
 }
 
 /* Grid */
 .recharts-cartesian-grid line {
-  stroke: var(--card-foreground);
+  stroke: var(--foreground);
   opacity: 0.5;
 }
 
@@ -72,13 +72,44 @@ h6 {
   border-radius: 15px;
   background-color: var(--card) !important;
   color: var(--foreground);
-  border: 1px solid var(--muted) !important;
+  border: 1px solid var(--muted-foreground) !important;
 }
 
 .recharts-tooltip-item {
   background-color: var(--card);
 }
 
-.recharts-text {
-  fill: var(--muted-foreground);
+/* Axis lines */
+.recharts-cartesian-axis-line {
+  stroke: var(--border);
+  stroke-width: 1px;
+}
+
+/* Tick lines */
+.recharts-cartesian-axis-tick-line {
+  stroke: var(--muted-foreground);
+  stroke-width: 1px;
+  opacity: 0.6;
+}
+
+/* Tick labels */
+.recharts-cartesian-axis-tick .recharts-text {
+  fill: var(--foreground);
+  font-size: 14px;
+}
+
+/* Grid */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: var(--muted-foreground);
+  opacity: 0.3;
+}
+
+/* Scope to X or Y if needed */
+.recharts-x-axis .recharts-cartesian-axis-line {
+  stroke: var(--muted-foreground);
+}
+
+.recharts-y-axis .recharts-cartesian-axis-line {
+  stroke: var(--muted-foreground);
 }

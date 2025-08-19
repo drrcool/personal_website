@@ -27,10 +27,12 @@ export const useSmoothScroll = () => {
           }
         } else {
           // Fallback: try to find by partial match or scroll to top
+          // eslint-disable-next-line no-console
           console.warn(`Section "${sectionId}" not found, scrolling to top`);
           window.scrollTo({ top: 0, behavior: "smooth" });
         }
       } catch (error) {
+        // eslint-disable-next-line no-console
         console.error("Smooth scroll failed:", error);
         // Ultimate fallback: just scroll to top
         window.scrollTo(0, 0);

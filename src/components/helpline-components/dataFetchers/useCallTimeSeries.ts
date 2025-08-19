@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState, useCallback } from "react";
 
 import { useSupabaseBrowser } from "../hooks/useSupabaseBrowser";
+import { useHelplineStore } from "../state/helpline-store";
 
 interface Point {
   call_cnt: number;
@@ -11,13 +12,8 @@ interface Point {
   dateint: string;
 }
 
-export function useCallTimeSeries({
-  helplineId,
-  startDate,
-}: {
-  helplineId: string;
-  startDate?: string;
-}) {
+export function useCallTimeSeries() {
+  const { helplineId, timeseriesStartDate } = useHelplineStore();
   const supabase = useSupabaseBrowser();
   const [data, setData] = useState<Point[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -40,7 +36,7 @@ export function useCallTimeSeries({
         .eq("helpline_id", helplineId)
         .gte("dateint", 20220301);
 
-      if (startDate) q1 = q1.gte("dateint", startDate);
+      if (timeseriesStartDate) q1 = q1.gte("dateint", timeseriesStartDate);
       q1 = q1
         .order("year", { ascending: true })
         .order("month", { ascending: true });
@@ -53,7 +49,7 @@ export function useCallTimeSeries({
         .eq("helpline_id", helplineId)
         .lt("dateint", 20220301);
 
-      if (startDate) q2 = q2.gte("dateint", startDate);
+      if (timeseriesStartDate) q2 = q2.gte("dateint", timeseriesStartDate);
       q2 = q2
         .order("year", { ascending: true })
         .order("month_of_year", { ascending: true });
@@ -74,7 +70,7 @@ export function useCallTimeSeries({
     } finally {
       setIsLoading(false);
     }
-  }, [supabase, helplineId, startDate]);
+  }, [supabase, helplineId, timeseriesStartDate]);
 
   useEffect(() => {
     fetchData();
