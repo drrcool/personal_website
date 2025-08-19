@@ -5,9 +5,14 @@ import SummaryCard from "../../layout/summary-card";
 import type { CallsSummaryCardProps } from "./calls-summary-row";
 
 const AbandonmentRateCard = ({ data, isLoading }: CallsSummaryCardProps) => {
-  const metric = 100.0 * (data.current_missed_call_cnt / data.current_call_cnt);
+  const metric =
+    data.current_call_cnt > 0
+      ? 100.0 * (data.current_missed_call_cnt / data.current_call_cnt)
+      : 0;
   const historicalMetric =
-    100.0 * (data.year_ago_missed_call_cnt / data.year_ago_call_cnt);
+    data.year_ago_call_cnt > 0
+      ? 100.0 * (data.year_ago_missed_call_cnt / data.year_ago_call_cnt)
+      : 0;
   const comparisonMetric = metric - historicalMetric;
   const isPositive = comparisonMetric > 0;
   return (
