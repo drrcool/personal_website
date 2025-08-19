@@ -71,6 +71,7 @@ const StackedAreaChart = ({
             type="monotone"
             key={key}
             dataKey={key}
+            strokeWidth={2}
             stroke={chartColors[index]}
             fill={chartColors[index]}
             name={nameMap?.[key] || key}

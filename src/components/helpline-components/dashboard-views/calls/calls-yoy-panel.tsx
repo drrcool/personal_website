@@ -4,9 +4,10 @@ import SummaryCard from "../../layout/summary-card";
 
 const CallsYoYPanel = ({ height = 500 }: { height?: number }) => {
   const { data, isLoading } = useYoYTimeSeries();
-  const groups = Object.keys(data[0] ?? {})
-    .map((item) => item)
-    .filter((item) => item !== "month");
+  const firstElement = data?.[0];
+  const groups = firstElement
+    ? Object.keys(firstElement).filter((item) => item !== "month")
+    : [];
   return (
     <SummaryCard isLoading={isLoading} height={height} cardTitle="Calls YoY">
       <LineChart data={data} xKey="month" yKeys={groups} />

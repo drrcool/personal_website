@@ -62,7 +62,7 @@ export const useYoYTimeSeries = () => {
         .select("year, month:month_of_year, call_cnt, missed_call_cnt")
         .eq("helpline_id", helplineId)
         .lt("dateint", 20220301)
-        .gte("dateint", 20210101)
+        .gte("dateint", 20200101)
         .order("year", { ascending: true })
         .order("month_of_year", { ascending: true });
       const { data: hist, error: err2 } = await q2;

@@ -8,6 +8,8 @@ import {
   YAxis,
 } from "recharts";
 
+import { hawkinsColors } from "@/styles/chartColors";
+
 interface LineChartProps {
   data: object[];
   xKey: string;
@@ -15,7 +17,6 @@ interface LineChartProps {
   xAxisLabel?: string;
   yAxisLabel?: string;
 }
-const colors = ["#8884d8", "#82ca9d", "#ffc658", "#ff6384", "#36a2eb"];
 
 const LineChart = ({
   data,
@@ -41,14 +42,15 @@ const LineChart = ({
           <Line
             type="monotone"
             dataKey={group}
-            fill={colors[index]}
-            stroke={colors[index]}
+            fill={hawkinsColors[index]}
+            stroke={hawkinsColors[index]}
+            strokeWidth={2}
             key={group}
             activeDot={{
               r: 5,
-              stroke: colors[index] as string,
+              stroke: hawkinsColors[index] as string,
               strokeWidth: 2,
-              fill: colors[index] as string,
+              fill: hawkinsColors[index] as string,
             }}
           />
         ))}
