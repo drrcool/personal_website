@@ -113,3 +113,10 @@ h6 {
 .recharts-y-axis .recharts-cartesian-axis-line {
   stroke: var(--muted-foreground);
 }
+
+/* Active dot (hovered) */
+.recharts-active-dot {
+  stroke: var(--border) !important;
+  stroke-width: 2 !important;
+  fill: var(--card) !important;
+}
