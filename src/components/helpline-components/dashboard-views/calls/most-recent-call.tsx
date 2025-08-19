@@ -48,7 +48,7 @@ const MostRecentCall = ({ helplineId }: { helplineId: HelplineID }) => {
       icon={getCallIcon(lastCall?.is_missed_call)}
       iconClass={getCallColor(lastCall?.is_missed_call)}
     >
-      <div className="grid grid-template-rows-[6fr, 1fr] gap-2 text-card-foreground h-full w-full">
+      <div className="grid grid-rows-[6fr_1fr] gap-2 text-card-foreground h-full w-full">
         <div className=" flex flex-row justify-between gap-5 text-xl items-end">
           <div className="font-bold text-4xl">{`${cleanedDate.month}/${cleanedDate.day}`}</div>
           <div>{cleanedDate.cleanedTime}</div>
