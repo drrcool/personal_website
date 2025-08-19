@@ -1,11 +1,11 @@
 "use client";
-import { useHelplineId } from "../state/helpline-store";
+import { useHelplineStore } from "../state/helpline-store";
 
 import CallTimeSeries from "./calls/call-time-series";
 import MostRecentCall from "./calls/most-recent-call";
 
 const Calls = () => {
-  const { helplineId } = useHelplineId();
+  const { helplineId } = useHelplineStore();
   return (
     <div className="flex flex-col gap-5 p-5">
       <div id="summary-row">

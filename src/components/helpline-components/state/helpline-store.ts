@@ -3,21 +3,19 @@ import { create } from "zustand";
 export type HelplineID = "GSC" | "NORCAL";
 interface HelplineStateValues {
   helplineId: HelplineID;
+  lastNDays: number;
 }
 const defaultState: HelplineStateValues = {
   helplineId: "GSC",
+  lastNDays: 30,
 };
 
 interface HelplineState extends HelplineStateValues {
   setHelplineId: (helplineId: HelplineID) => void;
+  setLastNDays: (lastNDays: number) => void;
 }
-const useHelplineStore = create<HelplineState>((set) => ({
+export const useHelplineStore = create<HelplineState>((set) => ({
   ...defaultState,
   setHelplineId: (helplineId: HelplineID) => set({ helplineId }),
+  setLastNDays: (lastNDays: number) => set({ lastNDays }),
 }));
-
-export const useHelplineId = () => {
-  const helplineId = useHelplineStore((state) => state.helplineId);
-  const setHelplineId = useHelplineStore((state) => state.setHelplineId);
-  return { helplineId, setHelplineId };
-};
