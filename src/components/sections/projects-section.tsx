@@ -14,7 +14,7 @@ export const ProjectLink = ({
 }) => {
   return (
     <a
-      className={"text-accent"}
+      className="cursor-pointer text-accent-foreground"
       href={link}
       target="_blank"
       rel="noopener noreferrer"
@@ -42,7 +42,9 @@ export const ProjectTags = ({ technologies }: { technologies: string[] }) => {
 export const ProjectItem = ({ project }: { project: Project }) => {
   return (
     <div
-      className={"border  bg-secondary/10 rounded-lg p-4 flex flex-col gap-3"}
+      className={
+        "border-gray-700 border  bg-secondary/10 rounded-lg p-4 flex flex-col gap-3"
+      }
     >
       <div className="text-lg font-bold">{project.title}</div>
       <div className="flex flex-col gap-2 pl-4">
