@@ -19,7 +19,7 @@ const SummaryCard = ({
   iconClass?: string;
 }) => {
   const Icon = icon;
-  const returnElement = isLoading ? <div>Loading...</div> : children;
+  const returnElement = isLoading ? <div></div> : children;
   return (
     <Card className="p-4 text-card" style={{ height }}>
       <div className="flex flex-col gap-2 h-full justify-between">

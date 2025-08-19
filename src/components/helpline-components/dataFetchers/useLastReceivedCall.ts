@@ -13,10 +13,8 @@ interface LastCall {
 export function useLastReceivedCall(helplineId: HelplineID) {
   const supabase = useSupabaseBrowser();
   const [data, setData] = useState<LastCall | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
 
   const fetchData = useCallback(async () => {
-    setIsLoading(true);
     const { data: lastCall } = await supabase
       .from("cleaned_calls")
       .select(
@@ -26,12 +24,11 @@ export function useLastReceivedCall(helplineId: HelplineID) {
       .order("call_time", { ascending: false })
       .limit(1);
     setData(lastCall?.[0] ?? null);
-    setIsLoading(false);
   }, [supabase, helplineId]);
 
   useEffect(() => {
     fetchData();
   }, [fetchData]);
 
-  return useMemo(() => ({ data, isLoading }), [data, isLoading]);
+  return useMemo(() => ({ data, isLoading: data === null }), [data]);
 }
