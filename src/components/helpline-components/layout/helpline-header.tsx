@@ -2,7 +2,7 @@ import { HelplineSelector } from "../inputs/helpline-selector";
 
 const BannerHeader = () => {
   return (
-    <div className="flex flex-row gap-2 w-full justify-between items-center h-16 px-6 py-4 border-b-1">
+    <div className="flex flex-row gap-2 w-full justify-between items-center h-16 px-6 py-4 border-b">
       <div className="flex flex-row gap-6 items-center">
         <div className="text-xl font-semibold">Helpline Dashboard</div>
         <HelplineSelector />
