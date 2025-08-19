@@ -8,6 +8,10 @@ const CallTimeSeries = ({ height = 500 }: { height?: number }) => {
     connected_call_cnt: "Connected Calls",
     missed_call_cnt: "Missed Calls",
   };
+  const colorMap = {
+    connected_call_cnt: "var(--color-semantic-success)",
+    missed_call_cnt: "var(--color-semantic-failure)",
+  };
   return (
     <SummaryCard isLoading={isLoading} height={height} cardTitle="Call Volume">
       <StackedArea
@@ -15,6 +19,7 @@ const CallTimeSeries = ({ height = 500 }: { height?: number }) => {
         xKey="dateint"
         yKey={["connected_call_cnt", "missed_call_cnt"]}
         nameMap={nameMap}
+        colorMap={colorMap}
       />
     </SummaryCard>
   );
