@@ -1,31 +1,29 @@
-import { Card } from "@/components/ui/card";
-
 import StackedArea from "../../charts/stacked-area";
-import { getCallTimeSeries } from "../../dataFetchers/getCallTimeSeries";
+import { useCallTimeSeries } from "../../dataFetchers/useCallTimeSeries";
+import SummaryCard from "../../layout/summary-card";
+import type { HelplineID } from "../../state/helpline-store";
 
-const CallTimeSeries = async () => {
-  const data = await getCallTimeSeries({ helplineId: "GSC" });
+const CallTimeSeries = ({
+  helplineId,
+  height = 500,
+}: {
+  helplineId: HelplineID;
+  height?: number;
+}) => {
+  const { data, isLoading } = useCallTimeSeries({ helplineId });
   const nameMap = {
     connected_call_cnt: "Connected Calls",
     missed_call_cnt: "Missed Calls",
   };
   return (
-    <Card className="p-4 text-card">
-      <div className="flex flex-col gap-2">
-        <div className="text-lg font-bold text-card-foreground">
-          Call Volume
-        </div>
-        <div>
-          <StackedArea
-            data={data}
-            xKey="dateint"
-            yKey={["connected_call_cnt", "missed_call_cnt"]}
-            nameMap={nameMap}
-            yAxisLabel="Calls"
-          />
-        </div>
-      </div>
-    </Card>
+    <SummaryCard isLoading={isLoading} height={height} cardTitle="Call Volume">
+      <StackedArea
+        data={data}
+        xKey="dateint"
+        yKey={["connected_call_cnt", "missed_call_cnt"]}
+        nameMap={nameMap}
+      />
+    </SummaryCard>
   );
 };
 
