@@ -20,7 +20,8 @@ export interface CallsSummaryCardProps {
 }
 
 const CallsSummaryRow = () => {
-  const { data, isLoading } = useCallsSummaryRow();
+  const { data } = useCallsSummaryRow();
+  const isLoading = Object.keys(data).length === 0;
   return (
     <div id="summary-row">
       <div className="grid grid-cols-3 md:grid-cols-5 gap-4">
