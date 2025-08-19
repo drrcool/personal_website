@@ -1,6 +1,6 @@
 import { PhoneCall, PhoneMissed } from "lucide-react";
 
-import { useLastRecievedCall } from "../../dataFetchers/useLastRecievedCall";
+import { useLastReceivedCall } from "../../dataFetchers/useLastReceivedCall";
 import SummaryCard from "../../layout/summary-card";
 import type { HelplineID } from "../../state/helpline-store";
 
