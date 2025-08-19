@@ -2,15 +2,9 @@
 
 import { useEffect, useMemo, useState, useCallback } from "react";
 
+import type { CallsSummaryRowData } from "../dashboard-views/calls/calls-summary-row";
 import { useSupabaseBrowser } from "../hooks/useSupabaseBrowser";
 import { useHelplineStore } from "../state/helpline-store";
-
-interface Point {
-  current_call_cnt: number;
-  current_missed_call_cnt: number;
-  year_ago_call_cnt: number;
-  year_ago_missed_call_cnt: number;
-}
 
 const dateToDateInt = (date: Date) => {
   const dateSplit = date.toISOString().split("T")?.[0] as string;
@@ -20,7 +14,9 @@ const dateToDateInt = (date: Date) => {
 export const useCallsSummaryRow = () => {
   const { helplineId, lastNDaysDateint } = useHelplineStore();
   const supabase = useSupabaseBrowser();
-  const [data, setData] = useState<Point>({} as Point);
+  const [data, setData] = useState<CallsSummaryRowData>(
+    {} as CallsSummaryRowData
+  );
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<Error | null>(null);
 
@@ -35,7 +31,8 @@ export const useCallsSummaryRow = () => {
           .select(
             `
           ${type}_call_cnt:count(),
-          ${type}_missed_call_cnt:is_missed_call.sum()
+          ${type}_missed_call_cnt:is_missed_call.sum(),
+          ${type}_call_duration_avg:duration_seconds.avg()
         `
           )
           .eq("helpline_id", helplineId);
@@ -60,7 +57,7 @@ export const useCallsSummaryRow = () => {
       const combined = {
         ...recent[0],
         ...hist[0],
-      } as Point;
+      } as CallsSummaryRowData;
       setData(combined);
     } catch (e) {
       setError(e as Error);

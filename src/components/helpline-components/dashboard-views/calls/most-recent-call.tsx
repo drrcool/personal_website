@@ -52,7 +52,7 @@ const MostRecentCall = () => {
       <div className="flex flex-col gap-2 text-card-foreground justify-between h-full">
         <div className="flex items-start flex-col justify-center flex-2 text-xl">
           <div className="font-bold text-4xl">{`${cleanedDate.month}/${cleanedDate.day}`}</div>
-          <div>{cleanedDate.cleanedTime}</div>
+          <div className="text-muted-foreground">{cleanedDate.cleanedTime}</div>
         </div>
       </div>
     </SummaryCard>
