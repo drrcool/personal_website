@@ -104,7 +104,7 @@ export const useSchedule = () => {
   }, [fetchData]);
 
   return useMemo(
-    () => ({ data, isLoading: Object.keys(data).length === 0 }),
+    () => ({ data, isLoading: Object.keys(data.schedule).length === 0 }),
     [data]
   );
 };

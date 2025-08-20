@@ -6,11 +6,11 @@ import { useHelplineStore } from "../state/helpline-store";
 
 export const HelplineToolsBar = ({
   title,
-  showDaySeletor = true,
+  showDaySelector = true,
   showMetricSelector = false,
 }: {
   title: string;
-  showDaySeletor?: boolean;
+  showDaySelector?: boolean;
   showMetricSelector?: boolean;
 }) => {
   const { lastNDays, setLastNDays, colorMetric, setColorMetric } =
@@ -29,7 +29,7 @@ export const HelplineToolsBar = ({
               />
             </Label>
           )}
-          {showDaySeletor && (
+          {showDaySelector && (
             <LastNDaysSelector
               value={lastNDays}
               setValue={setLastNDays}
