@@ -2,11 +2,13 @@
 import { HelplineToolsBar } from "../layout/helpline-tools-bar";
 
 import ScheduleGrid from "./calls/schedule/schedule-grid";
+import ScheduleSummaryRow from "./calls/schedule/schedule-summary";
 
 const Schedule = () => {
   return (
     <div className="flex flex-col gap-5 p-5">
       <HelplineToolsBar title="Schedule Insight" showMetricSelector />
+      <ScheduleSummaryRow />
       <ScheduleGrid />
     </div>
   );
