@@ -16,58 +16,58 @@ export interface Database {
     Tables: {
       cleaned_calls: {
         Row: {
-          assigned_operators: string | null;
-          call_time: string | null;
-          caller_number: string | null;
-          caller_state: string | null;
-          dateint: number | null;
-          day_of_week: number | null;
-          dedup_key: string | null;
-          duration_seconds: number | null;
-          helpline_id: string | null;
-          hour_of_day: number | null;
+          assigned_operators: string;
+          call_time: string;
+          caller_number: string;
+          caller_state: string;
+          dateint: number;
+          day_of_week: number;
+          dedup_key: string;
+          duration_seconds: number;
+          helpline_id: string;
+          hour_of_day: number;
           id: string;
-          is_missed_call: number | null;
-          month: number | null;
-          operator_name: string | null;
-          operator_number: string | null;
-          year: number | null;
+          is_missed_call: number;
+          month: number;
+          operator_name: string;
+          operator_number: string;
+          year: number;
         };
         Insert: {
-          assigned_operators?: string | null;
-          call_time?: string | null;
-          caller_number?: string | null;
-          caller_state?: string | null;
-          dateint?: number | null;
-          day_of_week?: number | null;
-          dedup_key?: string | null;
-          duration_seconds?: number | null;
-          helpline_id?: string | null;
-          hour_of_day?: number | null;
+          assigned_operators?: string;
+          call_time?: string;
+          caller_number?: string;
+          caller_state?: string;
+          dateint?: number;
+          day_of_week?: number;
+          dedup_key?: string;
+          duration_seconds?: number;
+          helpline_id?: string;
+          hour_of_day?: number;
           id?: string;
-          is_missed_call?: number | null;
-          month?: number | null;
-          operator_name?: string | null;
-          operator_number?: string | null;
-          year?: number | null;
+          is_missed_call?: number;
+          month?: number;
+          operator_name?: string;
+          operator_number?: string;
+          year?: number;
         };
         Update: {
-          assigned_operators?: string | null;
-          call_time?: string | null;
-          caller_number?: string | null;
-          caller_state?: string | null;
-          dateint?: number | null;
-          day_of_week?: number | null;
-          dedup_key?: string | null;
-          duration_seconds?: number | null;
-          helpline_id?: string | null;
-          hour_of_day?: number | null;
+          assigned_operators?: string;
+          call_time?: string;
+          caller_number?: string;
+          caller_state?: string;
+          dateint?: number;
+          day_of_week?: number;
+          dedup_key?: string;
+          duration_seconds?: number;
+          helpline_id?: string;
+          hour_of_day?: number;
           id?: string;
-          is_missed_call?: number | null;
-          month?: number | null;
-          operator_name?: string | null;
-          operator_number?: string | null;
-          year?: number | null;
+          is_missed_call?: number;
+          month?: number;
+          operator_name?: string;
+          operator_number?: string;
+          year?: number;
         };
         Relationships: [
           {
@@ -81,112 +81,112 @@ export interface Database {
       };
       helplines: {
         Row: {
-          anonymized_name: string | null;
-          display_name: string | null;
+          anonymized_name: string;
+          display_name: string;
           id: string;
         };
         Insert: {
-          anonymized_name?: string | null;
-          display_name?: string | null;
+          anonymized_name?: string;
+          display_name?: string;
           id: string;
         };
         Update: {
-          anonymized_name?: string | null;
-          display_name?: string | null;
+          anonymized_name?: string;
+          display_name?: string;
           id?: string;
         };
         Relationships: [];
       };
       historical_call_cnts: {
         Row: {
-          call_cnt: number | null;
-          dateint: number | null;
-          helpline_id: string | null;
+          call_cnt: number;
+          dateint: number;
+          helpline_id: string;
           key: number;
-          missed_call_cnt: number | null;
-          month_of_year: number | null;
-          year: number | null;
+          missed_call_cnt: number;
+          month_of_year: number;
+          year: number;
         };
         Insert: {
-          call_cnt?: number | null;
-          dateint?: number | null;
-          helpline_id?: string | null;
+          call_cnt?: number;
+          dateint?: number;
+          helpline_id?: string;
           key: number;
-          missed_call_cnt?: number | null;
-          month_of_year?: number | null;
-          year?: number | null;
+          missed_call_cnt?: number;
+          month_of_year?: number;
+          year?: number;
         };
         Update: {
-          call_cnt?: number | null;
-          dateint?: number | null;
-          helpline_id?: string | null;
+          call_cnt?: number;
+          dateint?: number;
+          helpline_id?: string;
           key?: number;
-          missed_call_cnt?: number | null;
-          month_of_year?: number | null;
-          year?: number | null;
+          missed_call_cnt?: number;
+          month_of_year?: number;
+          year?: number;
         };
         Relationships: [];
       };
       hourly_schedule: {
         Row: {
-          assigned_operators: string | null;
-          day_of_week: number | null;
-          dedup_key: string | null;
-          helpline_id: string | null;
-          hour_of_day: number | null;
+          assigned_operators: string;
+          day_of_week: number;
+          dedup_key: string;
+          helpline_id: string;
+          hour_of_day: number;
           id: string;
-          operators_scheduled: number | null;
+          operators_scheduled: number;
         };
         Insert: {
-          assigned_operators?: string | null;
-          day_of_week?: number | null;
-          dedup_key?: string | null;
-          helpline_id?: string | null;
-          hour_of_day?: number | null;
+          assigned_operators?: string;
+          day_of_week?: number;
+          dedup_key?: string;
+          helpline_id?: string;
+          hour_of_day?: number;
           id?: string;
-          operators_scheduled?: number | null;
+          operators_scheduled?: number;
         };
         Update: {
-          assigned_operators?: string | null;
-          day_of_week?: number | null;
-          dedup_key?: string | null;
-          helpline_id?: string | null;
-          hour_of_day?: number | null;
+          assigned_operators?: string;
+          day_of_week?: number;
+          dedup_key?: string;
+          helpline_id?: string;
+          hour_of_day?: number;
           id?: string;
-          operators_scheduled?: number | null;
+          operators_scheduled?: number;
         };
         Relationships: [];
       };
       operator_schedule: {
         Row: {
-          day_of_week: number | null;
-          dedup_key: string | null;
-          helpline_id: string | null;
-          hour_of_day: number | null;
+          day_of_week: number;
+          dedup_key: string;
+          helpline_id: string;
+          hour_of_day: number;
           id: string;
-          operator_id: string | null;
-          operator_name: string | null;
-          operator_number: string | null;
+          operator_id: string;
+          operator_name: string;
+          operator_number: string;
         };
         Insert: {
-          day_of_week?: number | null;
-          dedup_key?: string | null;
-          helpline_id?: string | null;
-          hour_of_day?: number | null;
+          day_of_week?: number;
+          dedup_key?: string;
+          helpline_id?: string;
+          hour_of_day?: number;
           id?: string;
-          operator_id?: string | null;
-          operator_name?: string | null;
-          operator_number?: string | null;
+          operator_id?: string;
+          operator_name?: string;
+          operator_number?: string;
         };
         Update: {
-          day_of_week?: number | null;
-          dedup_key?: string | null;
-          helpline_id?: string | null;
-          hour_of_day?: number | null;
+          day_of_week?: number;
+          dedup_key?: string;
+          helpline_id?: string;
+          hour_of_day?: number;
           id?: string;
-          operator_id?: string | null;
-          operator_name?: string | null;
-          operator_number?: string | null;
+          operator_id?: string;
+          operator_name?: string;
+          operator_number?: string;
         };
         Relationships: [
           {
@@ -200,43 +200,43 @@ export interface Database {
       };
       raw_calls: {
         Row: {
-          call_number: string | null;
-          dedup_key: string | null;
-          duration: string | null;
-          extension: string | null;
-          from_number: string | null;
-          helpline_id: string | null;
+          call_number: string;
+          dedup_key: string;
+          duration: string;
+          extension: string;
+          from_number: string;
+          helpline_id: string;
           id: string;
-          start_time: string | null;
-          to_number: string | null;
-          type: string | null;
-          year: number | null;
+          start_time: string;
+          to_number: string;
+          type: string;
+          year: number;
         };
         Insert: {
-          call_number?: string | null;
-          dedup_key?: string | null;
-          duration?: string | null;
-          extension?: string | null;
-          from_number?: string | null;
-          helpline_id?: string | null;
+          call_number?: string;
+          dedup_key?: string;
+          duration?: string;
+          extension?: string;
+          from_number?: string;
+          helpline_id?: string;
           id?: string;
-          start_time?: string | null;
-          to_number?: string | null;
-          type?: string | null;
-          year?: number | null;
+          start_time?: string;
+          to_number?: string;
+          type?: string;
+          year?: number;
         };
         Update: {
-          call_number?: string | null;
-          dedup_key?: string | null;
-          duration?: string | null;
-          extension?: string | null;
-          from_number?: string | null;
-          helpline_id?: string | null;
+          call_number?: string;
+          dedup_key?: string;
+          duration?: string;
+          extension?: string;
+          from_number?: string;
+          helpline_id?: string;
           id?: string;
-          start_time?: string | null;
-          to_number?: string | null;
-          type?: string | null;
-          year?: number | null;
+          start_time?: string;
+          to_number?: string;
+          type?: string;
+          year?: number;
         };
         Relationships: [
           {
@@ -250,37 +250,37 @@ export interface Database {
       };
       raw_missed_calls: {
         Row: {
-          dedup_key: string | null;
-          duration: string | null;
-          extension: string | null;
-          from_number: string | null;
-          helpline_id: string | null;
+          dedup_key: string;
+          duration: string;
+          extension: string;
+          from_number: string;
+          helpline_id: string;
           id: string;
-          start_time: string | null;
-          to_number: string | null;
-          year: number | null;
+          start_time: string;
+          to_number: string;
+          year: number;
         };
         Insert: {
-          dedup_key?: string | null;
-          duration?: string | null;
-          extension?: string | null;
-          from_number?: string | null;
-          helpline_id?: string | null;
+          dedup_key?: string;
+          duration?: string;
+          extension?: string;
+          from_number?: string;
+          helpline_id?: string;
           id?: string;
-          start_time?: string | null;
-          to_number?: string | null;
-          year?: number | null;
+          start_time?: string;
+          to_number?: string;
+          year?: number;
         };
         Update: {
-          dedup_key?: string | null;
-          duration?: string | null;
-          extension?: string | null;
-          from_number?: string | null;
-          helpline_id?: string | null;
+          dedup_key?: string;
+          duration?: string;
+          extension?: string;
+          from_number?: string;
+          helpline_id?: string;
           id?: string;
-          start_time?: string | null;
-          to_number?: string | null;
-          year?: number | null;
+          start_time?: string;
+          to_number?: string;
+          year?: number;
         };
         Relationships: [
           {

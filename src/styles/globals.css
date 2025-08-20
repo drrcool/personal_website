@@ -2,8 +2,23 @@
 @import "./tweakcn.css";
 
 :root {
-  --color-semantic-failure: oklch(0.6368 0.2078 25.3313);
-  --color-semantic-success: oklch(0.5676 0.2021 283.0838);
+  /* keep purple for success (same hue, tuned lightness/chroma) */
+  --color-semantic-success: oklch(0.58 0.2 283);
+
+  /* warning = amber/yellow (middle between success/failure) */
+  --color-semantic-warning: oklch(0.72 0.14 70);
+
+  /* failure = paler red/orange (lighter, lower chroma than current) */
+  --color-semantic-failure: oklch(0.7 0.14 25);
+
+  /* optional matching surfaces/borders (nice on dark backgrounds) */
+  --color-semantic-success-surface: oklch(0.33 0.06 283);
+  --color-semantic-warning-surface: oklch(0.35 0.05 70);
+  --color-semantic-failure-surface: oklch(0.35 0.06 25);
+
+  --color-semantic-success-border: oklch(0.52 0.12 283);
+  --color-semantic-warning-border: oklch(0.56 0.1 70);
+  --color-semantic-failure-border: oklch(0.55 0.12 25);
 }
 
 body {

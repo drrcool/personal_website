@@ -11,13 +11,12 @@ import {
   Line,
 } from "recharts";
 
-import { chartColors } from "@/styles/chartColors";
-
 interface StackedAreaChartProps {
   data: object[];
   xKey: string;
   yKey: string[];
   nameMap?: Record<string, string>;
+  colorMap?: Record<string, string>;
   xAxisLabel?: string;
   yAxisLabel?: string;
 }
@@ -27,6 +26,7 @@ const StackedAreaChart = ({
   xKey,
   yKey,
   nameMap,
+  colorMap = {},
   xAxisLabel,
   yAxisLabel,
 }: StackedAreaChartProps) => {
@@ -66,14 +66,14 @@ const StackedAreaChart = ({
           </Label>
         </XAxis>
 
-        {yKey.map((key, index) => (
+        {yKey.map((key) => (
           <Area
             type="monotone"
             key={key}
             dataKey={key}
             strokeWidth={2}
-            stroke={chartColors[index]}
-            fill={chartColors[index]}
+            stroke={colorMap[key]}
+            fill={colorMap[key]}
             name={nameMap?.[key] || key}
             stackId="1"
           />
