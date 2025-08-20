@@ -1,5 +1,6 @@
 import { useSchedule } from "@/components/helpline-components/dataFetchers/useSchedule";
 import { useHelplineStore } from "@/components/helpline-components/state/helpline-store";
+import { Card } from "@/components/ui/card";
 
 import {
   dayMap,
@@ -26,8 +27,8 @@ const ScheduleGrid = () => {
   const getColor = (value: number) => colorFnMap[colorMetric](value, lastNDays);
 
   return (
-    <div>
-      <div className="grid justify-center gap-x-2 gap-y-1 [grid-template-columns:repeat(7,minmax(0,10rem))] [grid-auto-rows:2rem]">
+    <Card className="p-4 text-card">
+      <div className="grid justify-center gap-x-2 gap-y-1 [grid-template-columns:repeat(7,minmax(0,20rem))] [grid-auto-rows:1.5rem]">
         {DAYS_OF_WEEK.map((day) => {
           return (
             <ScheduleHeader
@@ -52,7 +53,7 @@ const ScheduleGrid = () => {
           });
         })}
       </div>
-    </div>
+    </Card>
   );
 };
 

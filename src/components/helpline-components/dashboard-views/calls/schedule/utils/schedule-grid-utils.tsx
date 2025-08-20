@@ -41,7 +41,7 @@ export const colorFnMap = {
 
 export const ScheduleHeader = ({ day }: { day: string }) => {
   return (
-    <div className="flex flex-col items-center justify-center w-full h-full rounded-sm text-md font-bold">
+    <div className="flex flex-col items-center justify-center w-full h-full rounded-sm text-md font-bold text-card-foreground">
       {day}
     </div>
   );
@@ -108,7 +108,9 @@ export const ScheduleHour = ({
           )}
           style={{ backgroundColor: color }}
         >
-          {emptyData && <div className="text-background">{label}</div>}
+          {emptyData && (
+            <div className="text-background font-bold text-lg">{label}</div>
+          )}
         </div>
       </HoverCardTrigger>
       <HoverCardContent>
