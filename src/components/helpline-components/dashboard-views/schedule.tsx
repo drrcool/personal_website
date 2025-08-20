@@ -6,7 +6,7 @@ import ScheduleGrid from "./calls/schedule/schedule-grid";
 const Schedule = () => {
   return (
     <div className="flex flex-col gap-5 p-5">
-      <HelplineToolsBar title="Schedule Insight" />
+      <HelplineToolsBar title="Schedule Insight" showMetricSelector />
       <ScheduleGrid />
     </div>
   );

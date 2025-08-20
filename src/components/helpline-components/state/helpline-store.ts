@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { create } from "zustand";
 
+import type { ScheduleColorMetric } from "../dashboard-views/calls/schedule/utils/schedule-metric-selector";
+
 // Formatted as YYYYMMDD
 const getNDaysAgo = (n: number): number => {
   const date = new Date();
@@ -15,6 +17,7 @@ interface HelplineStateValues {
   timeseriesLastNDays: number;
   lastNDaysDateint: number;
   timeseriesStartDate: number;
+  colorMetric: ScheduleColorMetric;
 }
 const defaultState: HelplineStateValues = {
   helplineId: "GSC",
@@ -22,6 +25,7 @@ const defaultState: HelplineStateValues = {
   timeseriesLastNDays: 7300,
   lastNDaysDateint: getNDaysAgo(30),
   timeseriesStartDate: getNDaysAgo(7300),
+  colorMetric: "call_cnt",
 };
 
 interface HelplineState extends HelplineStateValues {
@@ -30,6 +34,7 @@ interface HelplineState extends HelplineStateValues {
   setLastNDaysDateint: (lastNDaysDateint: number) => void;
   setTimeseriesStartDate: (startDate: number) => void;
   setTimeseriesLastNDays: (lastNDays: number) => void;
+  setColorMetric: (colorMetric: ScheduleColorMetric) => void;
 }
 export const useStore = create<HelplineState>((set) => ({
   ...defaultState,
@@ -41,6 +46,7 @@ export const useStore = create<HelplineState>((set) => ({
     set({ timeseriesStartDate: startDate }),
   setTimeseriesLastNDays: (lastNDays: number) =>
     set({ timeseriesLastNDays: lastNDays }),
+  setColorMetric: (colorMetric: ScheduleColorMetric) => set({ colorMetric }),
 }));
 
 export const useHelplineStore = () => {
@@ -55,6 +61,8 @@ export const useHelplineStore = () => {
     setLastNDaysDateint,
     setTimeseriesStartDate,
     setTimeseriesLastNDays,
+    colorMetric,
+    setColorMetric,
   } = useStore();
   useEffect(() => {
     setTimeseriesStartDate(getNDaysAgo(timeseriesLastNDays));
@@ -71,5 +79,7 @@ export const useHelplineStore = () => {
     timeseriesLastNDays,
     timeseriesStartDate,
     setTimeseriesLastNDays,
+    colorMetric,
+    setColorMetric,
   };
 };
