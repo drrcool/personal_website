@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { create } from "zustand";
 
-import type { ScheduleColorMetric } from "../dashboard-views/calls/schedule/utils/schedule-metric-selector";
+import type { ScheduleColorMetric } from "../dashboard-views/schedule/utils/schedule-metric-selector";
 
 // Formatted as YYYYMMDD
 const getNDaysAgo = (n: number): number => {

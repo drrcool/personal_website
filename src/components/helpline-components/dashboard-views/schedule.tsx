@@ -1,8 +1,8 @@
 "use client";
 import { HelplineToolsBar } from "../layout/helpline-tools-bar";
 
-import ScheduleGrid from "./calls/schedule/schedule-grid";
-import ScheduleSummaryRow from "./calls/schedule/schedule-summary";
+import ScheduleGrid from "./schedule/schedule-grid";
+import ScheduleSummaryRow from "./schedule/schedule-summary";
 
 const Schedule = () => {
   return (

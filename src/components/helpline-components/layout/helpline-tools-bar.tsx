@@ -1,6 +1,6 @@
 import { Label } from "@/components/ui/label";
 
-import { ScheduleMetricSelector } from "../dashboard-views/calls/schedule/utils/schedule-metric-selector";
+import { ScheduleMetricSelector } from "../dashboard-views/schedule/utils/schedule-metric-selector";
 import { LastNDaysSelector } from "../inputs/last-n-days-selector";
 import { useHelplineStore } from "../state/helpline-store";
 
