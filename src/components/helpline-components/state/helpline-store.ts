@@ -13,10 +13,10 @@ const getNDaysAgo = (n: number): number => {
 const getPreviousMonth = () => {
   const date = new Date();
   date.setMonth(date.getMonth() - 1);
-  return Number(date.toISOString().split("T")?.[0]?.replace(/-/g, ""));
+  return Number(date.toISOString().split("T")?.[0]?.split("-")?.[1]);
 };
 
-const getCurrentYear = () => {
+export const getCurrentYear = () => {
   const date = new Date();
   return date.getFullYear();
 };
