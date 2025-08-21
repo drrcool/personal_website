@@ -5,7 +5,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useSupabaseBrowser } from "../hooks/useSupabaseBrowser";
 import { useHelplineStore } from "../state/helpline-store";
 
-interface OperatorStats {
+export interface OperatorStats {
   operator_name: string;
   assigned_call: number;
   connected_call_cnt: number;
