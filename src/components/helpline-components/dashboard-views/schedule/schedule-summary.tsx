@@ -35,7 +35,7 @@ const getScheduleAgg = (data: Record<string, ScheduleData>) => {
   return agg;
 };
 
-const ScheduleSummaryCard = ({
+export const ScheduleSummaryCard = ({
   title,
   value,
 }: {
@@ -46,7 +46,7 @@ const ScheduleSummaryCard = ({
     <SummaryCard height={100}>
       <div className="flex flex-col gap-2 text-card-foreground justify-between h-full">
         <div className="flex items-start flex-col justify-center flex-2 text-xl">
-          <div className="font-bold text-4xl">{value}</div>
+          <div className="font-bold text-3xl">{value}</div>
           <div className="text-sm text-muted-foreground">{title}</div>
         </div>
       </div>
