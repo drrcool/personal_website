@@ -25,7 +25,7 @@ export const useReportData = () => {
     `${reportYear}${String(reportMonth).padStart(2, "0")}31`
   );
   const pastStartDate = currentStartDate - 10000;
-  const pastEndDate = currentStartDate - 10000;
+  const pastEndDate = currentEndDate - 10000;
 
   const supabase = useSupabaseBrowser();
   const [data, setData] = useState<ReportData[]>([
@@ -53,8 +53,7 @@ export const useReportData = () => {
       .eq("helpline_id", helplineId)
       .gte("dateint", pastStartDate)
       .lte("dateint", pastEndDate);
-    console.log(current);
-    console.log(past);
+
     if (!current || err1) throw err1;
     if (!past || err2) throw err2;
     const merged = current.map((item, index) => ({
