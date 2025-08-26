@@ -14,7 +14,6 @@ const CallTimeSeries = ({ height = 500 }: { height?: number }) => {
     assigned_missed_call_cnt: "var(--color-semantic-failure)",
     unassigned_missed_call_cnt: "var(--color-semantic-warning)",
   };
-  console.log(data);
   return (
     <SummaryCard isLoading={isLoading} height={height} cardTitle="Call Volume">
       <StackedArea
