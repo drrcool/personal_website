@@ -2,7 +2,6 @@ export type Json =
   | string
   | number
   | boolean
-  | null
   | { [key: string]: Json | undefined }
   | Json[];
 
@@ -34,22 +33,22 @@ export interface Database {
           year: number;
         };
         Insert: {
-          assigned_operators?: string;
-          call_time?: string;
-          caller_number?: string;
+          assigned_operators: string;
+          call_time: string;
+          caller_number: string;
           caller_state?: string;
-          dateint?: number;
-          day_of_week?: number;
-          dedup_key?: string;
-          duration_seconds?: number;
-          helpline_id?: string;
-          hour_of_day?: number;
+          dateint: number;
+          day_of_week: number;
+          dedup_key: string;
+          duration_seconds: number;
+          helpline_id: string;
+          hour_of_day: number;
           id?: string;
-          is_missed_call?: number;
-          month?: number;
-          operator_name?: string;
-          operator_number?: string;
-          year?: number;
+          is_missed_call: number;
+          month: number;
+          operator_name: string;
+          operator_number: string;
+          year: number;
         };
         Update: {
           assigned_operators?: string;
@@ -108,13 +107,13 @@ export interface Database {
           year: number;
         };
         Insert: {
-          call_cnt?: number;
-          dateint?: number;
-          helpline_id?: string;
+          call_cnt: number;
+          dateint: number;
+          helpline_id: string;
           key: number;
-          missed_call_cnt?: number;
-          month_of_year?: number;
-          year?: number;
+          missed_call_cnt: number;
+          month_of_year: number;
+          year: number;
         };
         Update: {
           call_cnt?: number;
@@ -138,13 +137,13 @@ export interface Database {
           operators_scheduled: number;
         };
         Insert: {
-          assigned_operators?: string;
-          day_of_week?: number;
-          dedup_key?: string;
-          helpline_id?: string;
-          hour_of_day?: number;
+          assigned_operators: string;
+          day_of_week: number;
+          dedup_key: string;
+          helpline_id: string;
+          hour_of_day: number;
           id?: string;
-          operators_scheduled?: number;
+          operators_scheduled: number;
         };
         Update: {
           assigned_operators?: string;
@@ -169,14 +168,14 @@ export interface Database {
           operator_number: string;
         };
         Insert: {
-          day_of_week?: number;
+          day_of_week: number;
           dedup_key?: string;
-          helpline_id?: string;
-          hour_of_day?: number;
+          helpline_id: string;
+          hour_of_day: number;
           id?: string;
-          operator_id?: string;
-          operator_name?: string;
-          operator_number?: string;
+          operator_id: string;
+          operator_name: string;
+          operator_number: string;
         };
         Update: {
           day_of_week?: number;
@@ -294,7 +293,18 @@ export interface Database {
       };
     };
     Views: {
-      [_ in never]: never;
+      calls_time_series: {
+        Row: {
+          assigned_missed_call: number;
+          call_cnt: number;
+          dateint: number;
+          helpline_id: string;
+          month: number;
+          unassigned_missed_call: number;
+          year: number;
+        };
+        Relationships: [];
+      };
     };
     Functions: {
       [_ in never]: never;
