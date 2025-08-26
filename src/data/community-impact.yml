@@ -2,6 +2,8 @@ featuredProjects:
   - id: "helpline-operations"
     title: "Helpline Operations & Reporting"
     description: "Coordinated scheduling and onboarding for a community recovery helpline. Built monthly engagement reporting and training materials to improve coverage and service quality."
+    link: "helpline"
+    linkTitle: "Helpline Dashboard"
 
   - id: "membership-survey"
     title: "Membership Survey Analytics"

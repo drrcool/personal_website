@@ -2,7 +2,7 @@ import { loadCommunityImpactData } from "@/lib/data-loader";
 
 import { SectionComponent } from "../ui/SectionLabel";
 
-import { ProjectItem } from "./projects-section";
+import { ProjectItem } from "./project-item";
 
 const projectsData = loadCommunityImpactData();
 
