@@ -36,7 +36,7 @@ interface HelplineStateValues {
 }
 const defaultState: HelplineStateValues = {
   helplineId: "GSC",
-  lastNDays: 30,
+  lastNDays: 90,
   timeseriesLastNDays: 7300,
   lastNDaysDateint: getNDaysAgo(30),
   timeseriesStartDate: getNDaysAgo(7300),
