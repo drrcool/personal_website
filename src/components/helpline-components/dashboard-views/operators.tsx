@@ -1,6 +1,7 @@
 "use client";
 import { HelplineToolsBar } from "../layout/helpline-tools-bar";
 
+import OperatorDetails from "./operators/operator-details";
 import OperatorStats from "./operators/operator-stats";
 import OperatorSummaryRow from "./operators/operators-summary-row";
 
@@ -10,6 +11,7 @@ const Operators = () => {
       <HelplineToolsBar title="Operator Metrics" />
       <OperatorSummaryRow />
       <OperatorStats />
+      <OperatorDetails />
     </div>
   );
 };
