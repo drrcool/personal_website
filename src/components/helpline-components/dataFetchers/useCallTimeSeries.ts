@@ -7,7 +7,8 @@ import { useHelplineStore } from "../state/helpline-store";
 
 interface Point {
   call_cnt: number;
-  missed_call_cnt: number;
+  assigned_missed_call_cnt: number;
+  unassigned_missed_call_cnt: number;
   connected_call_cnt: number;
   dateint: string;
 }
@@ -20,16 +21,16 @@ export function useCallTimeSeries() {
   const fetchData = useCallback(async () => {
     if (!helplineId) return;
     let q1 = supabase
-      .from("cleaned_calls")
+      .from("calls_time_series")
       .select(
         `
           month, year,
-          call_cnt:count(),
-          missed_call_cnt:is_missed_call.sum()
+          call_cnt:call_cnt.sum(),
+          assigned_missed_call_cnt:assigned_missed_call.sum(),
+          unassigned_missed_call_cnt:unassigned_missed_call.sum()
         `
       )
-      .eq("helpline_id", helplineId)
-      .gte("dateint", 20220301);
+      .eq("helpline_id", helplineId);
 
     if (timeseriesStartDate) q1 = q1.gte("dateint", timeseriesStartDate);
     q1 = q1
@@ -37,29 +38,15 @@ export function useCallTimeSeries() {
       .order("month", { ascending: true });
     const { data: recent, error: err1 } = await q1;
     if (err1) throw err1;
-
-    let q2 = supabase
-      .from("historical_call_cnts")
-      .select("year, month:month_of_year, call_cnt, missed_call_cnt")
-      .eq("helpline_id", helplineId)
-      .lt("dateint", 20220301);
-
-    if (timeseriesStartDate) q2 = q2.gte("dateint", timeseriesStartDate);
-    q2 = q2
-      .order("year", { ascending: true })
-      .order("month_of_year", { ascending: true });
-    const { data: hist, error: err2 } = await q2;
-    if (err2) throw err2;
-
-    const joined = [...(hist || []), ...(recent || [])];
-    setData(
-      joined.map((r) => ({
-        call_cnt: r.call_cnt ?? 0,
-        missed_call_cnt: r.missed_call_cnt ?? 0,
-        connected_call_cnt: (r.call_cnt ?? 0) - (r.missed_call_cnt ?? 0),
-        dateint: `${r.year}-${String(r.month).padStart(2, "0")}-01`,
-      }))
-    );
+    const data: Point[] = recent.map((row) => ({
+      ...row,
+      connected_call_cnt:
+        row.call_cnt -
+        row.assigned_missed_call_cnt -
+        row.unassigned_missed_call_cnt,
+      dateint: `${row.year}-${String(row.month).padStart(2, "0")}-01`,
+    }));
+    setData(data);
   }, [supabase, helplineId, timeseriesStartDate]);
 
   useEffect(() => {
