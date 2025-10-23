@@ -2,7 +2,7 @@
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
-import { useReportData } from "../dataFetchers/useReportData";
+import { useReportData, type ReportData } from "../dataFetchers/useReportData";
 import { useHelplineStore } from "../state/helpline-store";
 
 import ReportsToolBar from "./reports/reports-tool-bar";
@@ -22,9 +22,13 @@ const monthMap = {
   12: "December",
 };
 
-const getPreviousMonth = (currentMonth: number) => {
-  if (currentMonth === 1) return 12;
-  return currentMonth - 1;
+const getMonthFromDate = (date: number) => {
+  // Date is formatted as YYYYMMDD
+  return Math.floor((date % 10000) / 100);
+};
+
+const getYearFromDate = (date: number) => {
+  return Math.floor(date / 10000);
 };
 
 const TableRow = ({
@@ -60,9 +64,16 @@ const TableRow = ({
 };
 
 const Reports = () => {
-  const { reportType, reportMonth, reportYear } = useHelplineStore();
-  const rawData = useReportData()?.[0];
-  if (!rawData) return null;
+  const { reportType } = useHelplineStore();
+  const {
+    data: dataArray,
+    currentStartDate,
+    currentEndDate,
+    pastStartDate,
+    pastEndDate,
+  } = useReportData();
+  if (!dataArray || dataArray.length === 0) return null;
+  const rawData = dataArray[0] as ReportData;
   const data = {
     ...rawData,
     call_cnt_pct_change:
@@ -79,14 +90,15 @@ const Reports = () => {
       (rawData?.missed_call_cnt / rawData?.call_cnt -
         rawData?.past_missed_call_cnt / rawData?.past_call_cnt),
   };
+
   const timeWindow =
     reportType === "month"
-      ? `${monthMap[reportMonth as keyof typeof monthMap]} ${reportYear}`
-      : `${monthMap[reportMonth as keyof typeof monthMap]} ${reportYear - 1} - ${monthMap[getPreviousMonth(reportMonth) as keyof typeof monthMap]} ${reportYear}`;
+      ? `${monthMap[getMonthFromDate(currentStartDate) as keyof typeof monthMap]} ${getYearFromDate(currentStartDate)}`
+      : `${monthMap[getMonthFromDate(currentStartDate) as keyof typeof monthMap]} ${getYearFromDate(currentStartDate)} - ${monthMap[getMonthFromDate(currentEndDate) as keyof typeof monthMap]} ${getYearFromDate(currentEndDate)}`;
   const pastTimeWindow =
     reportType === "month"
-      ? `${monthMap[reportMonth as keyof typeof monthMap]} ${reportYear - 1}`
-      : `${monthMap[reportMonth as keyof typeof monthMap]} ${reportYear - 2} -  ${monthMap[getPreviousMonth(reportMonth) as keyof typeof monthMap]} ${reportYear - 1}`;
+      ? `${monthMap[getMonthFromDate(pastStartDate) as keyof typeof monthMap]} ${getYearFromDate(pastStartDate)}`
+      : `${monthMap[getMonthFromDate(pastStartDate) as keyof typeof monthMap]} ${getYearFromDate(pastStartDate)} -  ${monthMap[getMonthFromDate(pastEndDate) as keyof typeof monthMap]} ${getYearFromDate(pastEndDate)}`;
   const titleBar = `${reportType === "month" ? "Monthly" : "Yearly"} Report - ${timeWindow}`;
   return (
     <div className="flex flex-col gap-5 p-5">
