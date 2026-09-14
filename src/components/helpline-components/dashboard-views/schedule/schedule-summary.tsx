@@ -101,9 +101,27 @@ const UnstaffedHours = () => {
   return <ScheduleSummaryCard title="Unstaffed Hours" value={unstaffedHours} />;
 };
 
+/**
+ * Expected missed callers per week, summed across all 168 hours. This is the headline the
+ * need score exists to produce: one number, in callers rather than percentages, that a
+ * coordinator can repeat when asking for volunteers.
+ */
+const ExpectedMissedCallers = () => {
+  const {
+    data: { summary },
+  } = useSchedule();
+  return (
+    <ScheduleSummaryCard
+      title="Expected Missed Callers / Week"
+      value={summary.total_need_score.toFixed(1)}
+    />
+  );
+};
+
 const ScheduleSummaryRow = () => {
   return (
-    <div className="grid grid-cols-4 gap-5">
+    <div className="grid grid-cols-5 gap-5">
+      <ExpectedMissedCallers />
       <HoursCovered />
       <UnstaffedHours />
       <CoverageRate />

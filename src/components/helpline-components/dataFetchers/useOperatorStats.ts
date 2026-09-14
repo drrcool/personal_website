@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 
 import { useSupabaseBrowser } from "../hooks/useSupabaseBrowser";
+import { RELIABILITY_CUTOFF_DATEINT } from "../metrics/constants";
 import { useHelplineStore } from "../state/helpline-store";
 
 export interface OperatorStats {
@@ -33,7 +34,11 @@ export const useOperatorStats = () => {
          `
       )
       .eq("helpline_id", helplineId)
-      .gte("dateint", lastNDaysDateint);
+      // Clamped to the assigned-operators cutoff so these per-operator rates agree with
+      // the shared metrics module. Before this date `assigned_operators` was empty, so a
+      // longer lookback counts opportunities that were never recorded and deflates every
+      // operator's rate.
+      .gte("dateint", Math.max(lastNDaysDateint, RELIABILITY_CUTOFF_DATEINT));
     if (error) throw error;
 
     const emptyOutput = {

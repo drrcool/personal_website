@@ -135,3 +135,10 @@ h6 {
   stroke-width: 2 !important;
   fill: var(--card) !important;
 }
+
+/* Attempts distribution chart (caller experience): axis lines should stand out against
+   the muted default used elsewhere, not blend into the card background. */
+.attempts-distribution-chart .recharts-cartesian-axis-line {
+  stroke: var(--foreground) !important;
+  stroke-width: 1.5px !important;
+}

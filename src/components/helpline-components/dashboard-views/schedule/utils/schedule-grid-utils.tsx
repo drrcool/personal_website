@@ -2,38 +2,85 @@ import { cx } from "class-variance-authority";
 
 import type { ScheduleData } from "@/components/helpline-components/dataFetchers/useSchedule";
 import {
+  SHRINKAGE_K,
+  type NeedTier,
+} from "@/components/helpline-components/metrics/constants";
+import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
 
+import type { ScheduleColorMetric } from "./schedule-metric-selector";
+
 export const range = (start: number, end: number) =>
   Array.from({ length: end - start + 1 }, (_, i) => start + i);
 
+const FAILURE = "var(--color-semantic-failure)";
+const WARNING = "var(--color-semantic-warning)";
+const SUCCESS = "var(--color-semantic-success)";
+const EMPTY = "var(--muted-foreground)";
+
+/**
+ * Color functions take the whole row rather than a single value, because the need-score
+ * metric needs its precomputed tier and the missed-call rate needs the call count to
+ * judge how much to trust the rate.
+ */
+export type ScheduleColorFn = (row: ScheduleData, lastNDays: number) => string;
+
 // 0 → green, 0.5 → yellow, 1 → red
-export const callCountColor = (value: number, lastNDays: number): string => {
-  const compValue = (365 * value) / lastNDays;
-  if (compValue > 20) return "var(--color-semantic-failure)";
-  if (compValue > 10) return "var(--color-semantic-warning)";
-  if (compValue === 0) return "var(--muted-foreground)";
-  return "var(--color-semantic-success)";
+export const callCountColor: ScheduleColorFn = ({ call_cnt }, lastNDays) => {
+  const compValue = (365 * call_cnt) / lastNDays;
+  if (compValue > 20) return FAILURE;
+  if (compValue > 10) return WARNING;
+  if (compValue === 0) return EMPTY;
+  return SUCCESS;
 };
 
-const missedCallCountColor = (value: number, lastNDays: number): string => {
-  const compValue = (365 * value) / lastNDays;
-  if (compValue > 8) return "var(--color-semantic-failure)";
-  if (compValue > 3) return "var(--color-semantic-warning)";
-  if (compValue === 0) return "var(--muted-foreground)";
-  return "var(--color-semantic-success)";
+const missedCallCountColor: ScheduleColorFn = (
+  { missed_call_cnt },
+  lastNDays
+) => {
+  const compValue = (365 * missed_call_cnt) / lastNDays;
+  if (compValue > 8) return FAILURE;
+  if (compValue > 3) return WARNING;
+  if (compValue === 0) return EMPTY;
+  return SUCCESS;
 };
 
-const missedCallRateColor = (value: number, _: number): string => {
-  if (value > 75) return "var(--color-semantic-failure)";
-  if (value > 50) return "var(--color-semantic-warning)";
-  if (value === 0) return "var(--muted-foreground)";
-  return "var(--color-semantic-success)";
+/**
+ * Missed-call rate, shrunk toward 50% by {@link SHRINKAGE_K} pseudo-calls.
+ *
+ * Without shrinkage a 1-of-1 miss renders identically to a 20-of-20 miss, which at this
+ * helpline's volumes made the metric unreadable: most hours see a handful of calls a
+ * quarter, so single events dominated the color. Shrinking pulls thin evidence toward the
+ * middle, so a cell has to earn a red.
+ */
+const missedCallRateColor: ScheduleColorFn = ({
+  call_cnt,
+  missed_call_cnt,
+}) => {
+  if (call_cnt === 0) return EMPTY;
+  const shrunkRate =
+    (100 * (missed_call_cnt + SHRINKAGE_K * 0.5)) / (call_cnt + SHRINKAGE_K);
+  if (shrunkRate > 75) return FAILURE;
+  if (shrunkRate > 50) return WARNING;
+  return SUCCESS;
 };
-export const colorFnMap = {
+
+const NEED_TIER_COLORS: Record<NeedTier, string> = {
+  critical: FAILURE,
+  warning: WARNING,
+  ok: SUCCESS,
+  none: EMPTY,
+};
+
+/** Keyed on the precomputed tier so the grid and any other consumer agree. */
+const needScoreColor: ScheduleColorFn = ({ need_tier }) =>
+  NEED_TIER_COLORS[need_tier ?? "none"];
+
+export const colorFnMap: Record<ScheduleColorMetric, ScheduleColorFn> = {
+  need_score: needScoreColor,
   call_cnt: callCountColor,
   missed_call_cnt: missedCallCountColor,
   missed_call_rate: missedCallRateColor,
@@ -55,9 +102,11 @@ const ScheduleTooltipRow = ({
   value?: string | number;
 }) => {
   return (
-    <div className="flex flex-row justify-between text-sm">
-      <div className="font-bold">{label}</div>
-      {value && <div className="text-sm">{String(value).slice(0, 20)}</div>}
+    <div className="flex flex-row justify-between text-sm gap-4">
+      <div className="font-bold whitespace-nowrap">{label}</div>
+      {value !== undefined && (
+        <div className="text-sm text-right">{String(value).slice(0, 40)}</div>
+      )}
     </div>
   );
 };
@@ -93,6 +142,9 @@ export const ScheduleHour = ({
           missed_call_cnt: 0,
           assigned_operators: "--",
           missed_call_rate: 0,
+          need_score: 0,
+          need_tier: "none",
+          calls_per_week: 0,
         }
       : data;
 
@@ -117,6 +169,14 @@ export const ScheduleHour = ({
         <div className="flex flex-col gap-2">
           <ScheduleTooltipRow label={tooltipLabel} />
           <ScheduleTooltipRow
+            label="Need Score"
+            value={`${santizedData.need_score.toFixed(2)}/wk`}
+          />
+          <ScheduleTooltipRow
+            label="Calls per Week"
+            value={santizedData.calls_per_week.toFixed(1)}
+          />
+          <ScheduleTooltipRow
             label="Attempted Calls"
             value={santizedData.call_cnt}
           />
@@ -130,7 +190,11 @@ export const ScheduleHour = ({
           />
           <ScheduleTooltipRow
             label="Operators"
-            value={santizedData.assigned_operators}
+            value={
+              santizedData.operators_scheduled === 0
+                ? "None scheduled"
+                : santizedData.assigned_operators
+            }
           />
         </div>
       </HoverCardContent>

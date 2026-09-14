@@ -1,5 +1,6 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
+import CallerExperienceView from "../../dashboard-views/caller-experience";
 import Calls from "../../dashboard-views/calls";
 import Operators from "../../dashboard-views/operators";
 import Reports from "../../dashboard-views/reports";
@@ -10,6 +11,7 @@ const TABS = {
   Reports: "reports",
   Schedule: "schedule",
   Operators: "operators",
+  Callers: "callers",
 };
 
 export const HelplineTabs = () => {
@@ -20,6 +22,7 @@ export const HelplineTabs = () => {
           <TabsTrigger value={TABS.Calls}>Calls</TabsTrigger>
           <TabsTrigger value={TABS.Schedule}>Schedule</TabsTrigger>
           <TabsTrigger value={TABS.Operators}>Operators</TabsTrigger>
+          <TabsTrigger value={TABS.Callers}>Callers</TabsTrigger>
           <TabsTrigger value={TABS.Reports}>Reports</TabsTrigger>
         </TabsList>
         <TabsContent value={TABS.Calls}>
@@ -30,6 +33,9 @@ export const HelplineTabs = () => {
         </TabsContent>
         <TabsContent value={TABS.Operators}>
           <Operators />
+        </TabsContent>
+        <TabsContent value={TABS.Callers}>
+          <CallerExperienceView />
         </TabsContent>
         <TabsContent value={TABS.Reports}>
           <Reports />
