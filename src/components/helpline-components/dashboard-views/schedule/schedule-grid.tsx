@@ -1,4 +1,7 @@
-import { useSchedule } from "@/components/helpline-components/dataFetchers/useSchedule";
+import {
+  useSchedule,
+  type ScheduleData,
+} from "@/components/helpline-components/dataFetchers/useSchedule";
 import { useHelplineStore } from "@/components/helpline-components/state/helpline-store";
 import { Card } from "@/components/ui/card";
 
@@ -24,7 +27,21 @@ const ScheduleGrid = () => {
     });
   });
 
-  const getColor = (value: number) => colorFnMap[colorMetric](value, lastNDays);
+  const emptyCell = (day: number, hour: number): ScheduleData => ({
+    day_of_week: day,
+    hour_of_day: hour,
+    operators_scheduled: 0,
+    assigned_operators: "--",
+    call_cnt: 0,
+    missed_call_cnt: 0,
+    missed_call_rate: 0,
+    need_score: 0,
+    need_tier: "none",
+    calls_per_week: 0,
+  });
+
+  const getColor = (row: ScheduleData) =>
+    colorFnMap[colorMetric](row, lastNDays);
 
   return (
     <Card className="p-4 text-card">
@@ -46,7 +63,7 @@ const ScheduleGrid = () => {
                 key={`${day.day}-${day.hour}`}
                 data={data[`${day.day}-${day.hour}`]}
                 color={getColor(
-                  data[`${day.day}-${day.hour}`]?.[colorMetric] ?? 0
+                  data[`${day.day}-${day.hour}`] ?? emptyCell(day.day, day.hour)
                 )}
               />
             );

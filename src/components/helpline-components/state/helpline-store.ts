@@ -40,7 +40,7 @@ const defaultState: HelplineStateValues = {
   timeseriesLastNDays: 7300,
   lastNDaysDateint: getNDaysAgo(30),
   timeseriesStartDate: getNDaysAgo(7300),
-  colorMetric: "call_cnt",
+  colorMetric: "need_score",
   reportType: "month",
   reportMonth: getPreviousMonth(),
   reportYear: getCurrentYear(),
